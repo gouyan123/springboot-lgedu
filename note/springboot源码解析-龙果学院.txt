@@ -1,0 +1,17 @@
+------------------------------spring与springboot源码阅读环境搭建
+1、springframwork下载4.3.13版本：https://github.com/spring-projects/spring-framework/tree/v4.3.13.RELEASE，git中切换tag即可选择版本；
+2、安装gradle：http://services.gradle.org/distributions/，下载后解压，并将 /bin路径配置到环境变量path中；使用idea打开springframwork，然后Import Module，
+按Gradle方式导入；
+3、springboot下载1.5.9版本：https://github.com/spring-projects/spring-boot/tree/v1.5.9.RELEASE，idea打开spring-boot，然后Import Maven，按maven方式打开；
+------------------------------springboot源码分析
+创建 maven项目spring-boot-analysis，创建启动类 SpringBootAnalysisApplication如下，使用@SpringBootApplication依赖spring-boot-autoconfigure包，SpringApplication
+依赖
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+@SpringBootApplication
+public class SpringBootAnalysisApplication{
+    public static void main( String[] args ){
+        SpringApplication.run(SpringBootAnalysisApplication.class,args);
+    }
+}
+跟 run()方法，进入SpringApplication类，并在run()方法处 打断点；

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jruby:yecht:jruby:1.1">
+    <CLASSES>
+      <root url="jar://D:/gradle/caches/modules-2/files-2.1/org.jruby/yecht/1.1/49f801cec4e48bcb8feeac66c748e68fb68bd479/yecht-1.1-jruby.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/gradle/caches/modules-2/files-2.1/org.jruby/yecht/1.1/2a460330ce900d9e9174ff9565d30adf754666af/yecht-1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

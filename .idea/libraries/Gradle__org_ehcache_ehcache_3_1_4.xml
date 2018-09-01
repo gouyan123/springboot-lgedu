@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.ehcache:ehcache:3.1.4">
+    <CLASSES>
+      <root url="jar://D:/gradle/caches/modules-2/files-2.1/org.ehcache/ehcache/3.1.4/e2f35955dbf73bbdd417c37fdac64756bc3738/ehcache-3.1.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/gradle/caches/modules-2/files-2.1/org.ehcache/ehcache/3.1.4/cf698f2fd8bbd42279847ef3444e4de7ce555f82/ehcache-3.1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

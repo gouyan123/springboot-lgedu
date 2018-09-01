@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jruby.joni:joni:2.1.10">
+    <CLASSES>
+      <root url="jar://D:/gradle/caches/modules-2/files-2.1/org.jruby.joni/joni/2.1.10/8a4bed03d58bfad16c0d28e015ff04e5da303ed3/joni-2.1.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/gradle/caches/modules-2/files-2.1/org.jruby.joni/joni/2.1.10/a9cde6839d6452a22844ce2e8277ee8fa2056fbd/joni-2.1.10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
