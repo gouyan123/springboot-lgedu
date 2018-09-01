@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3755dfef-3cce-4990-8adc-741d81bbb835" name="Default" comment="" />
+    <list default="true" id="3755dfef-3cce-4990-8adc-741d81bbb835" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/springboot源码解析-龙果学院.txt" beforeDir="false" afterPath="$PROJECT_DIR$/note/springboot源码解析-龙果学院.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-analysis/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-analysis/spring-boot-analysis.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/SpringBootAnalysisApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-analysis/target/classes/com/gouyan/SpringBootAnalysisApplication.class" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/spring-framework-4.3.13.RELEASE/spring-test/.gradle/" />
     <ignored path="$PROJECT_DIR$/spring-framework-4.3.13.RELEASE/spring-test/build/" />
     <ignored path="$PROJECT_DIR$/spring-framework-4.3.13.RELEASE/spring-test/out/" />
@@ -201,25 +211,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="springboot源码解析-龙果学院.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="springboot源码解析-龙果学院.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/note/springboot源码解析-龙果学院.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="656">
-              <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpringBootAnalysisApplication.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/SpringBootAnalysisApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#137#138#0" expanded="true" />
-                <element signature="e#189#190#0" expanded="true" />
-              </folding>
+              <caret line="16" column="87" selection-start-line="16" selection-start-column="87" selection-end-line="16" selection-end-column="87" />
             </state>
           </provider>
         </entry>
@@ -5652,41 +5648,6 @@
               <item name="springboot-lgedu" type="462c0819:PsiDirectoryNode" />
               <item name="note" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="springboot-lgedu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springboot-lgedu" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-boot-analysis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springboot-lgedu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springboot-lgedu" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-boot-analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springboot-lgedu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springboot-lgedu" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-boot-analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springboot-lgedu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springboot-lgedu" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-boot-analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springboot-lgedu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springboot-lgedu" type="462c0819:PsiDirectoryNode" />
-              <item name="spring-boot-analysis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gouyan" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -5720,17 +5681,6 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="SpringBootAnalysisApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.gouyan.SpringBootAnalysisApplication" />
-      <module name="spring-boot-analysis" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.gouyan.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -5782,11 +5732,6 @@
       <properties />
       <listeners />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.SpringBootAnalysisApplication" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -5801,12 +5746,12 @@
       <workItem from="1535788434270" duration="2091000" />
       <workItem from="1535790635997" duration="67000" />
       <workItem from="1535790722783" duration="2086000" />
-      <workItem from="1535793119981" duration="3012000" />
+      <workItem from="1535793119981" duration="3933000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7256000" />
+    <option name="totallyTimeSpent" value="8177000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -5822,7 +5767,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39906102" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" weight="0.3298122" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
@@ -5830,13 +5775,13 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.6349765" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2607296" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.6349765" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2607296" />
       <window_info anchor="bottom" id="Problems" order="7" sideWeight="0.49946353" weight="0.3298122" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.3299356" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="right" id="JSF" order="4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="CDI" />
@@ -5864,8 +5809,14 @@
           <line>1106</line>
           <properties />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE.jar!/org/springframework/boot/SpringApplication.class</url>
+          <line>103</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -5949,20 +5900,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="29" column="43" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/note/springboot源码解析-龙果学院.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spring-boot-1.5.9.RELEASE/spring-boot/src/main/java/org/springframework/boot/SpringApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
@@ -5977,15 +5914,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1189">
+          <caret line="29" column="43" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE.jar!/org/springframework/boot/SpringApplication.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="102" column="17" selection-start-line="102" selection-start-column="17" selection-end-line="102" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/SpringBootAnalysisApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        <state relative-caret-position="451">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#137#138#0" expanded="true" />
             <element signature="e#189#190#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/note/springboot源码解析-龙果学院.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="16" column="87" selection-start-line="16" selection-start-column="87" selection-end-line="16" selection-end-column="87" />
         </state>
       </provider>
     </entry>
@@ -6006,7 +5964,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -6065,7 +6023,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Gradle: antlr:antlr:2.7.6</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>

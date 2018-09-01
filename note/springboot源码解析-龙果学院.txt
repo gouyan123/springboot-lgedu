@@ -14,4 +14,4 @@ public class SpringBootAnalysisApplication{
         SpringApplication.run(SpringBootAnalysisApplication.class,args);
     }
 }
-跟 run()方法，进入SpringApplication类，并在run()方法处 打断点；
+跟 run()方法，进入SpringApplication类，一直跟到initialize(sources)方法，可以采用打端点的方式，先看下一步调用哪里，就在那里 打断点；
