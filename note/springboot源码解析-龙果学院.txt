@@ -91,15 +91,19 @@ public static List<String> loadFactoryNames(Class<?> factoryClass, ClassLoader c
 
 回到 getSpringFactoriesInstances()方法里面的createSpringFactoriesInstances()方法，
 private <T> List<T> createSpringFactoriesInstances(Class<T> type, Class<?>[] parameterTypes, ClassLoader classLoader, Object[] args, Set<String> names) {
+    //names指spring.factories中的key
     List<T> instances = new ArrayList(names.size());
     Iterator var7 = names.iterator();
     while(var7.hasNext()) {
         String name = (String)var7.next();
         try {
+            //遍历加载 spring.factories中 各 类全名，只加载ApplicationContextInitializer接口的子类；
             Class<?> instanceClass = ClassUtils.forName(name, classLoader);
             Assert.isAssignable(type, instanceClass);
             Constructor<?> constructor = instanceClass.getDeclaredConstructor(parameterTypes);
+            //获得对应构造器
             T instance = BeanUtils.instantiateClass(constructor, args);
+            //将instance加入集合 instances中
             instances.add(instance);
         } catch (Throwable var12) {
             throw new IllegalArgumentException("Cannot instantiate " + type + " : " + name, var12);
