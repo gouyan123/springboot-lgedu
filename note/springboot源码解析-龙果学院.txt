@@ -52,8 +52,11 @@ public static boolean isPresent(String className, ClassLoader classLoader) {
 就返回true，不依赖该web包，就返回false；通过右侧Maven观察spring-boot-starter-web包依赖spring-webmvc包，因此类加载器可以加载到org.springframework.web.context.ConfigurableWebApplicationContext；
 spring-boot-starter-web包依赖spring-boot-starter-tomcat包依赖tomcat-embed-core包，该包定义了Servlet接口，因此类加载器可以加载到该javax.servlet.Servlet，
 因此判定是一个web项目；
+
 回到 SpringApplication类的initialize()方法里面的 this.setInitializers(this.getSpringFactoriesInstances(ApplicationContextInitializer.class));方法，
-跟 getSpringFactoriesInstances(ApplicationContextInitializer.class)方法，
+跟 getSpringFactoriesInstances(ApplicationContextInitializer.class)方法：
+在classpath路径下的jar包中包含的 /META-INFO/spring.factories文件里找到org.springframework.context.ApplicationContextInitializer对应的属性，然后实例化
+并排序，设置到SpringApplication对象的initiallizer属性，该属性是一个ArrayList类型；
 private <T> Collection<? extends T> getSpringFactoriesInstances(Class<T> type) {
     return this.getSpringFactoriesInstances(type, new Class[0]);
 }
@@ -64,6 +67,7 @@ private <T> Collection<? extends T> getSpringFactoriesInstances(Class<T> type, C
     //List转换成Set，避免重复
     Set<String> names = new LinkedHashSet(SpringFactoriesLoader.loadFactoryNames(type, classLoader));
     List<T> instances = this.createSpringFactoriesInstances(type, parameterTypes, classLoader, args, names);
+    //对实例进行排序
     AnnotationAwareOrderComparator.sort(instances);
     return instances;
 }
@@ -110,4 +114,11 @@ private <T> List<T> createSpringFactoriesInstances(Class<T> type, Class<?>[] par
         }
     }
     return instances;
+}
+
+回到 getSpringFactoriesInstances()方法里面的AnnotationAwareOrderComparator.sort(instances);方法 对实例进行排序；
+回到 initialize()方法的setListeners()方法，
+public void setListeners(Collection<? extends ApplicationListener<?>> listeners) {
+    this.listeners = new ArrayList();
+    this.listeners.addAll(listeners);
 }
