@@ -15,3 +15,95 @@ public class SpringBootAnalysisApplication{
     }
 }
 跟 run()方法，进入SpringApplication类，一直跟到initialize(sources)方法，可以采用打端点的方式，先看下一步调用哪里，就在那里 打断点；
+private void initialize(Object[] sources) {
+    if (sources != null && sources.length > 0) {
+        this.sources.addAll(Arrays.asList(sources));
+    }
+
+    this.webEnvironment = this.deduceWebEnvironment();
+    this.setInitializers(this.getSpringFactoriesInstances(ApplicationContextInitializer.class));
+    this.setListeners(this.getSpringFactoriesInstances(ApplicationListener.class));
+    this.mainApplicationClass = this.deduceMainApplicationClass();
+}
+跟initialize(Object[] sources)里面的this.deduceWebEnvironment()方法，该方法遍历数组 WEB_ENVIRONMENT_CLASSES =new String[]{"javax.servlet.Servlet",
+"org.springframework.web.context.ConfigurableWebApplicationContext"}，检查classpath中是否有以上2个类，并将值(true|false)赋给SpringApplication对象的
+webEnvironment成员变量，表示启动程序是否为一个web应用；
+private boolean deduceWebEnvironment() {
+    String[] var1 = WEB_ENVIRONMENT_CLASSES;
+    int var2 = var1.length;
+    for(int var3 = 0; var3 < var2; ++var3) {
+        String className = var1[var3];
+        if (!ClassUtils.isPresent(className, (ClassLoader)null)) {
+            return false;
+        }
+    }
+    return true;
+}
+跟deduceWebEnvironment()方法里面的isPresent()方法
+public static boolean isPresent(String className, ClassLoader classLoader) {
+    try {
+        forName(className, classLoader);
+        return true;
+    } catch (Throwable var3) {
+        return false;
+    }
+}
+其中 forName()方法作用：使用类加载器classLoader加载className，成功返回true，出异常说明不存在，返回false；实际中pom.xml文件中依赖spring-boot-starter-web，
+就返回true，不依赖该web包，就返回false；通过右侧Maven观察spring-boot-starter-web包依赖spring-webmvc包，因此类加载器可以加载到org.springframework.web.context.ConfigurableWebApplicationContext；
+spring-boot-starter-web包依赖spring-boot-starter-tomcat包依赖tomcat-embed-core包，该包定义了Servlet接口，因此类加载器可以加载到该javax.servlet.Servlet，
+因此判定是一个web项目；
+回到 SpringApplication类的initialize()方法里面的 this.setInitializers(this.getSpringFactoriesInstances(ApplicationContextInitializer.class));方法，
+跟 getSpringFactoriesInstances(ApplicationContextInitializer.class)方法，
+private <T> Collection<? extends T> getSpringFactoriesInstances(Class<T> type) {
+    return this.getSpringFactoriesInstances(type, new Class[0]);
+}
+跟 getSpringFactoriesInstances()方法，
+private <T> Collection<? extends T> getSpringFactoriesInstances(Class<T> type, Class<?>[] parameterTypes, Object... args) {
+    //获取当前线程的classLoader
+    ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+    //List转换成Set，避免重复
+    Set<String> names = new LinkedHashSet(SpringFactoriesLoader.loadFactoryNames(type, classLoader));
+    List<T> instances = this.createSpringFactoriesInstances(type, parameterTypes, classLoader, args, names);
+    AnnotationAwareOrderComparator.sort(instances);
+    return instances;
+}
+跟 SpringFactoriesLoader.loadFactoryNames(type, classLoader)方法，classLoader是当前线程的，不是null，因此执行 classLoader.getResources("META-INF/spring.factories")，
+加载指定路径下的资源；全局搜索spring.factories，发现spring-boot-starter-*相关依赖里面 META-INF/文件夹里面都有该spring.factories文件
+public static List<String> loadFactoryNames(Class<?> factoryClass, ClassLoader classLoader) {
+    String factoryClassName = factoryClass.getName();
+    try {
+        //classLoader是当前线程的，不是null，因此执行 classLoader.getResources("META-INF/spring.factories")，加载指定路径下的资源；
+        Enumeration<URL> urls = classLoader != null ? classLoader.getResources("META-INF/spring.factories") : ClassLoader.getSystemResources("META-INF/spring.factories");
+        ArrayList result = new ArrayList();
+        //加载 META-INF/spring.factories中定义的 类全名className；
+        while(urls.hasMoreElements()) {
+            URL url = (URL)urls.nextElement();
+            Properties properties = PropertiesLoaderUtils.loadProperties(new UrlResource(url));
+            String factoryClassNames = properties.getProperty(factoryClassName);
+            //将类全名className以 "," 分隔，然后加入 result中
+            result.addAll(Arrays.asList(StringUtils.commaDelimitedListToStringArray(factoryClassNames)));
+        }
+        return result;
+    } catch (IOException var8) {
+        throw new IllegalArgumentException("Unable to load [" + factoryClass.getName() + "] factories from location [" + "META-INF/spring.factories" + "]", var8);
+    }
+}
+
+回到 getSpringFactoriesInstances()方法里面的createSpringFactoriesInstances()方法，
+private <T> List<T> createSpringFactoriesInstances(Class<T> type, Class<?>[] parameterTypes, ClassLoader classLoader, Object[] args, Set<String> names) {
+    List<T> instances = new ArrayList(names.size());
+    Iterator var7 = names.iterator();
+    while(var7.hasNext()) {
+        String name = (String)var7.next();
+        try {
+            Class<?> instanceClass = ClassUtils.forName(name, classLoader);
+            Assert.isAssignable(type, instanceClass);
+            Constructor<?> constructor = instanceClass.getDeclaredConstructor(parameterTypes);
+            T instance = BeanUtils.instantiateClass(constructor, args);
+            instances.add(instance);
+        } catch (Throwable var12) {
+            throw new IllegalArgumentException("Cannot instantiate " + type + " : " + name, var12);
+        }
+    }
+    return instances;
+}
