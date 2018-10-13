@@ -313,6 +313,7 @@ private ResolvableType(Class<?> clazz) {
 SimpleApplicationEventMulticaster.multicastEvent(final ApplicationEvent event, ResolvableType eventType) 真正发布事件
 public void multicastEvent(final ApplicationEvent event, ResolvableType eventType) {
     ResolvableType type = eventType != null ? eventType : this.resolveDefaultEventType(event);
+    // 跟 getApplicationListeners(event, type)
     Iterator var4 = this.getApplicationListeners(event, type).iterator();
     while(var4.hasNext()) {
         final ApplicationListener<?> listener = (ApplicationListener)var4.next();
@@ -328,6 +329,114 @@ public void multicastEvent(final ApplicationEvent event, ResolvableType eventTyp
         }
     }
 }
+SimpleApplicationEventMulticaster.getApplicationListeners(ApplicationEvent event, ResolvableType eventType)：
+// SimpleApplicationEventMulticaster转发器持有一系列 listeners，传入事件是 ApplicationStartedEvent，获得对applicationstart方法感兴趣的applicationlist
+protected Collection<ApplicationListener<?>> getApplicationListeners(ApplicationEvent event, ResolvableType eventType) {
+    Object source = event.getSource();
+    Class<?> sourceType = source != null ? source.getClass() : null;
+    // 构造ListenerCacheKey
+    AbstractApplicationEventMulticaster.ListenerCacheKey cacheKey = new AbstractApplicationEventMulticaster.ListenerCacheKey(eventType, sourceType);
+    // 查询对应缓存，有值直接返回，没有加载缓存
+    AbstractApplicationEventMulticaster.ListenerRetriever retriever = (AbstractApplicationEventMulticaster.ListenerRetriever)this.retrieverCache.get(cacheKey);
+    if (retriever != null) {
+        return retriever.getApplicationListeners();
+        // 加载缓存，此时传入的event是 ApplicationStartedEvent，跟 ClassUtils.isCacheSafe()
+    } else if (this.beanClassLoader == null || ClassUtils.isCacheSafe(event.getClass(), this.beanClassLoader) && (sourceType == null || ClassUtils.isCacheSafe(sourceType, this.beanClassLoader))) {
+        Object var7 = this.retrievalMutex;
+        synchronized(this.retrievalMutex) {
+            retriever = (AbstractApplicationEventMulticaster.ListenerRetriever)this.retrieverCache.get(cacheKey);
+            if (retriever != null) {
+                return retriever.getApplicationListeners();
+            } else {
+                retriever = new AbstractApplicationEventMulticaster.ListenerRetriever(true);
+                Collection<ApplicationListener<?>> listeners = this.retrieveApplicationListeners(eventType, sourceType, retriever);
+                this.retrieverCache.put(cacheKey, retriever);
+                return listeners;
+            }
+        }
+    } else {
+        return this.retrieveApplicationListeners(eventType, sourceType, (AbstractApplicationEventMulticaster.ListenerRetriever)null);
+    }
+}
+ClassUtils.isCacheSafe()；Java中类加载器 ClassLoader分 3种：1 ApplicationClassLoader；2 ExtentionClassLoader；3 BootstrapClassLoader；
+// ApplicationClassLoader先问ExtentionClassLoader是否可以加载，ExtentionClassLoader再问BootstrapClassLoader是否可以加载，如果BootstrapClassLoader可以
+// 加载则BootstrapClassLoader加载，如果BootstrapClassLoader不能加载，告诉ExtentionClassLoader，如果ExtentionClassLoader可以加载则加载，如果不能加载则告诉
+// ApplicationClassLoader，由ApplicationClassLoader加载；类比，一个流水线，3个类加载器是3个工人，来一个任务，先传到最里面，看最里面能不能处理，如果最里面
+// 不能处理，则依次往外面传，谁能处理谁处理；
+public static boolean isCacheSafe(Class<?> clazz, ClassLoader classLoader) {
+    Assert.notNull(clazz, "Class must not be null");
+    try {
+        ClassLoader target = clazz.getClassLoader();
+        // target == null 说明加载的类是 bootstrap
+        if (target == null) {return true;}
+        ClassLoader cur = classLoader;
+        if (cur == target) {return true;}
+        while (cur != null) {
+            cur = cur.getParent();
+            if (cur == target) {return true;}
+        }
+        return false;
+    }
+    catch (SecurityException ex) {return true;}
+}
+AbstractApplicationEventMulticaster.retrieveApplicationListeners()
+private Collection<ApplicationListener<?>> retrieveApplicationListeners(ResolvableType eventType, Class<?> sourceType, AbstractApplicationEventMulticaster.ListenerRetriever retriever) {
+    LinkedList<ApplicationListener<?>> allListeners = new LinkedList();
+    Object var7 = this.retrievalMutex;
+    LinkedHashSet listeners;
+    LinkedHashSet listenerBeans;
+    // 在成员变量retrievalMutex上面加锁，多个线程操作时，只有一个线程能获得锁，其他线程等待在这个锁上
+    synchronized(this.retrievalMutex) {
+        listeners = new LinkedHashSet(this.defaultRetriever.applicationListeners);
+        listenerBeans = new LinkedHashSet(this.defaultRetriever.applicationListenerBeans);
+    }
+    Iterator var14 = listeners.iterator();
+    while(var14.hasNext()) {
+        ApplicationListener<?> listener = (ApplicationListener)var14.next();
+        // 依次遍历，判断是否支持传进来的事件，跟 supportsEvent()方法
+        if (this.supportsEvent(listener, eventType, sourceType)) {
+            if (retriever != null) {
+                retriever.applicationListeners.add(listener);
+            }
+            allListeners.add(listener);
+        }
+    }
+    if (!listenerBeans.isEmpty()) {
+        BeanFactory beanFactory = this.getBeanFactory();
+        Iterator var16 = listenerBeans.iterator();
+        while(var16.hasNext()) {
+            String listenerBeanName = (String)var16.next();
+            try {
+                Class<?> listenerType = beanFactory.getType(listenerBeanName);
+                if (listenerType == null || this.supportsEvent(listenerType, eventType)) {
+                    ApplicationListener<?> listener = (ApplicationListener)beanFactory.getBean(listenerBeanName, ApplicationListener.class);
+                    if (!allListeners.contains(listener) && this.supportsEvent(listener, eventType, sourceType)) {
+                        if (retriever != null) {
+                            retriever.applicationListenerBeans.add(listenerBeanName);
+                        }
+                        allListeners.add(listener);
+                    }
+                }
+            } catch (NoSuchBeanDefinitionException var13) {
+                ;
+            }
+        }
+    }
+    AnnotationAwareOrderComparator.sort(allListeners);
+    return allListeners;
+}
+AbstractApplicationEventMulticaster.supportsEvent()方法
+protected boolean supportsEvent(ApplicationListener<?> listener, ResolvableType eventType, Class<?> sourceType) {
+    GenericApplicationListener smartListener = listener instanceof GenericApplicationListener ? (GenericApplicationListener)listener : new GenericApplicationListenerAdapter(listener);
+    // 跟 supportsSourceType(sourceType)
+    return ((GenericApplicationListener)smartListener).supportsEventType(eventType) && ((GenericApplicationListener)smartListener).supportsSourceType(sourceType);
+}
+GenericApplicationListenerAdapter.supportsSourceType(Class<?> sourceType)
+@Override
+public boolean supportsSourceType(Class<?> sourceType) {
+    return isAssignableFrom(sourceType, SOURCE_TYPES);
+}
+
 
 
 

@@ -1,0 +1,98 @@
+看下面代码方法，逐个 方法 打断点，依次往下走；
+org.springframework.boot.SpringApplication.run(String...)
+-->org.springframework.boot.SpringApplication.getRunListeners(String[])
+	-->org.springframework.boot.SpringApplication.getSpringFactoriesInstances(Class<T>, Class<?>[], Object...)
+		// 加载/META/spring.factories文件里找到 org.springframework.boot.SpringApplicationRunListener 配置的值
+		// 此时配置的只有1个 等于org.springframework.boot.context.event.EventPublishingRunListener
+		--> org.springframework.boot.SpringApplication.createSpringFactoriesInstances(Class<T>, Class<?>[], ClassLoader, Object[], Set<String>)
+			--> org.springframework.boot.context.event.EventPublishingRunListener.EventPublishingRunListener(SpringApplication, String[])
+				-->
+
+	--> 初始化SpringApplicationRunListeners
+--> org.springframework.boot.SpringApplicationRunListeners.starting()
+	-->org.springframework.boot.context.event.EventPublishingRunListener.starting()
+		--> 初始化ApplicationStartedEvent
+		--> org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(ApplicationEvent) // 发布ApplicationStartedEvent 事件
+			--> SimpleApplicationEventMulticaster.resolveDefaultEventType(ApplicationEvent)
+				--> org.springframework.core.ResolvableType.forInstance(Object)
+					-->org.springframework.core.ResolvableType.forClass(Class<?>) // 创建对应的ResolvableType
+						--> org.springframework.core.ResolvableType.ResolvableType(Class<?>)
+							// 直接实例化了1个ResolvableType
+								private ResolvableType(Class<?> clazz) {
+									this.resolved = (clazz != null ? clazz : Object.class); // ApplicationStartedEvent.class
+									this.type = this.resolved; // ApplicationStartedEvent.class
+									this.typeProvider = null;
+									this.variableResolver = null;
+									this.componentType = null;
+									this.hash = null;
+								}
+		--> org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(ApplicationEvent, ResolvableType) // 进行真正的发布事件
+			--> org.springframework.context.event.AbstractApplicationEventMulticaster.getApplicationListeners(ApplicationEvent, ResolvableType)
+				--> org.springframework.context.event.AbstractApplicationEventMulticaster.retrieveApplicationListeners(ResolvableType, Class<?>, ListenerRetriever)
+					-->  依次遍历listeners ,调用supportsEvent方法来进行判断是否支持当前事件
+						--> org.springframework.context.event.GenericApplicationListenerAdapter.supportsEventType(ResolvableType)
+							--> 会调用GenericApplicationListener#supportsEventType, 和 GenericApplicationListener#supportsSourceType 来进行判断
+								--> AnsiOutputApplicationListener ---> 由于不是SmartApplicationListener 的子类,因此会进行判断ApplicationEnvironmentPreparedEvent 是否是ApplicationStartedEvent的子类,此时返回fasle
+								--> LoggingApplicationListener-->
+
+									--> org.springframework.boot.logging.LoggingApplicationListener.supportsEventType(ResolvableType)
+										// 判断ApplicationStartedEvent是否是 ApplicationStartingEvent.class,ApplicationEnvironmentPreparedEvent.class, ApplicationPreparedEvent.class,ContextClosedEvent.class, ApplicationFailedEvent.class中某个类的子类
+										// 由于ApplicationStartedEvent是ApplicationStartingEvent的子类,此时返回true
+									--> org.springframework.boot.logging.LoggingApplicationListener.supportsSourceType(Class<?>)
+										--> // 判断SpringApplication 是否是 SpringApplication.class,ApplicationContext.class 的子类,很明显返回true
+									因此加入到retriever,allListeners	中
+
+								--> ClasspathLoggingApplicationListener
+									--> org.springframework.boot.logging.ClasspathLoggingApplicationListener.supportsEventType(ResolvableType)
+										--> 判断ApplicationStartedEvent是否是ApplicationEnvironmentPreparedEvent,ApplicationFailedEvent 的子类, 很明显,返回false
+
+								--> BackgroundPreinitializer
+									--> org.springframework.context.event.GenericApplicationListenerAdapter.supportsEventType(ResolvableType)
+										--> 判断ApplicationStartedEvent 是否是SpringApplicationEvent的子类, 很明显,这里返回true.
+									--> org.springframework.context.event.GenericApplicationListenerAdapter.supportsSourceType(Class<?>)
+										--> BackgroundPreinitializer 不是SmartApplicationListener 的实例,因此会返回true
+								因此加入到retriever,allListeners	中
+
+								--> DelegatingApplicationListener
+									--> org.springframework.context.event.GenericApplicationListenerAdapter.supportsEventType(ResolvableType)
+										--> 判断ApplicationStartedEvent 是否是ApplicationEvent的子类, 很明显,这里返回true.
+									--> org.springframework.context.event.GenericApplicationListenerAdapter.supportsSourceType(Class<?>)
+										--> 由于 DelegatingApplicationListener	不是SmartApplicationListener 的实现,这里返回的false,但是前面有个！ 因此返回true
+								因此加入到retriever,allListeners	中
+
+								--> ParentContextCloserApplicationListener
+									--> org.springframework.context.event.GenericApplicationListenerAdapter.supportsEventType(ResolvableType)
+										--> 	判断ApplicationStartedEvent 是否是 ParentContextAvailableEvent 的子类, 很明显,这里返回false.
+
+								--> ClearCachesApplicationListener
+									--> org.springframework.context.event.GenericApplicationListenerAdapter.supportsEventType(ResolvableType)
+										--> 判断ApplicationStartedEvent 是否是 ContextRefreshedEvent 的子类, 很明显,这里返回false.
+
+								--> FileEncodingApplicationListener
+										--> org.springframework.context.event.GenericApplicationListenerAdapter.supportsEventType(ResolvableType)
+											--> 判断ApplicationStartedEvent 是否是 ApplicationEnvironmentPreparedEvent 的子类, 很明显,这里返回false.
+
+								--> LiquibaseServiceLocatorApplicationListener
+									--> org.springframework.context.event.GenericApplicationListenerAdapter.supportsEventType(ResolvableType)
+										--> 	判断ApplicationStartedEvent 是否是 ApplicationStartingEvent 的子类, 很明显,这里返回true.
+									--> org.springframework.context.event.GenericApplicationListenerAdapter.supportsSourceType(Class<?>)
+										--> LiquibaseServiceLocatorApplicationListener 不是SmartApplicationListener的实现,因此返回true
+								因此加入到retriever,allListeners	中
+
+			-->		进行遍历
+				--> org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(ApplicationListener<?>, ApplicationEvent)
+					// 由于没有配置Executor,因此此处是依次遍历
+					--> 	org.springframework.context.event.SimpleApplicationEventMulticaster.getErrorHandler() // 返回null
+					--> 	org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(ApplicationListener, ApplicationEvent)
+						-->  直接调用对应的ApplicationListener#onApplicationEvent方法
+
+					--> LoggingApplicationListener#onApplicationEvent
+						--> org.springframework.boot.logging.LoggingApplicationListener.onApplicationStartingEvent(ApplicationStartingEvent)
+							--> 获得LoggingSystem,	调用其beforeInitialize 方法.  重点
+
+					--> BackgroundPreinitializer#onApplicationEvent
+						--> 空操作
+
+					--> DelegatingApplicationListener 空操作
+					--> LiquibaseServiceLocatorApplicationListener
+						--> 判断在当前的类路径下是否存在liquibase.servicelocator.ServiceLocator,由于我们加入liquibase-core,此时相当于是空实现
