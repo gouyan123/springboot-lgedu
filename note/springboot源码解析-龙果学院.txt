@@ -4,6 +4,7 @@
 按Gradle方式导入；
 3、springboot下载1.5.9版本：https://github.com/spring-projects/spring-boot/tree/v1.5.9.RELEASE，idea打开spring-boot，然后Import Maven，按maven方式打开；
 ------------------------------springboot源码分析
+------------------------------SpringApplication类的run()方法中的initialize()方法解析
 创建 maven项目spring-boot-analysis，创建启动类 SpringBootAnalysisApplication如下，使用@SpringBootApplication依赖spring-boot-autoconfigure包，SpringApplication
 依赖
 import org.springframework.boot.SpringApplication;
@@ -14,7 +15,7 @@ public class SpringBootAnalysisApplication{
         SpringApplication.run(SpringBootAnalysisApplication.class,args);
     }
 }
-跟 run()方法，进入SpringApplication类，一直跟到initialize(sources)方法，可以采用打端点的方式，先看下一步调用哪里，就在那里 打断点；
+跟 run()方法，进入SpringApplication类，一直跟到initialize(sources)方法，可以采用打断点的方式，先看下一步调用哪里，就在那里 打断点；
 private void initialize(Object[] sources) {
     if (sources != null && sources.length > 0) {
         this.sources.addAll(Arrays.asList(sources));
@@ -122,3 +123,211 @@ public void setListeners(Collection<? extends ApplicationListener<?>> listeners)
     this.listeners = new ArrayList();
     this.listeners.addAll(listeners);
 }
+至此，run()方法中的初始化方法initialize(Object[] sources)解析完成，接下来解析 run()方法：
+
+---run()方法解析
+---第04节SpringApplication run方法解析(1)--前3步
+SpringApplication run()方法共13步：
+1、初始化 StopWatch，调用其start()方法，开始计时；
+2、调用configureHeadlessProperty设置系统属性 java.awt.headless，这里设置为true，表示运行在服务器端，在没有显示器和鼠标键盘的模式下工作，模拟输入输出设备功能；
+3、调用SpringApplicationRunListeners的starting()方法；
+4、创建一个DefaultApplicationArguments对象,它持有着args参数，就是main函数传进来的参数.调用prepareEnvironment()方法
+5、打印banner
+6、创建SpringBoot上下文
+7、初始化FailureAnalyzers
+8、调用prepareContext
+9、调用AbstractApplicationContext的refresh()方法,并注册钩子
+10、在容器完成刷新后，依次调用注册的Runners
+11、调用SpringApplicationRunListeners#finished
+12、停止计时
+13、初始化过程中出现异常时调用handleRunFailure进行处理,然后抛出IllegalStateException异常.
+SpringApplication类中run()方法如下：
+public ConfigurableApplicationContext run(String... args) {
+    //---前3步
+    StopWatch stopWatch = new StopWatch();
+    stopWatch.start();
+    ConfigurableApplicationContext context = null;
+    FailureAnalyzers analyzers = null;
+    this.configureHeadlessProperty();
+    SpringApplicationRunListeners listeners = this.getRunListeners(args);
+    listeners.starting();
+    //---
+    try {
+        ApplicationArguments applicationArguments = new DefaultApplicationArguments(args);
+        ConfigurableEnvironment environment = this.prepareEnvironment(listeners, applicationArguments);
+        Banner printedBanner = this.printBanner(environment);
+        context = this.createApplicationContext();
+        new FailureAnalyzers(context);
+        this.prepareContext(context, environment, listeners, applicationArguments, printedBanner);
+        this.refreshContext(context);
+        this.afterRefresh(context, applicationArguments);
+        listeners.finished(context, (Throwable)null);
+        stopWatch.stop();
+        if (this.logStartupInfo) {
+            (new StartupInfoLogger(this.mainApplicationClass)).logStarted(this.getApplicationLog(), stopWatch);
+        }
+
+        return context;
+    } catch (Throwable var9) {
+        this.handleRunFailure(context, listeners, (FailureAnalyzers)analyzers, var9);
+        throw new IllegalStateException(var9);
+    }
+}
+跟run()方法中的new StopWatch()进入计时器类 StopWatch，跟其start()方法和stop()方法；
+跟run()方法中的configureHeadlessProperty()方法
+private void configureHeadlessProperty() {
+    // 设置系统属性java.awt.headless，这里设置为true，表示运行在服务器端，在没有显示器和鼠标键盘的模式下工作，模拟输入输出设备功能；
+    System.setProperty("java.awt.headless", System.getProperty("java.awt.headless", Boolean.toString(this.headless)));
+}
+跟run()方法中的getRunListeners(args)方法，其中getSpringFactoriesInstances()方法作用，从/META-INF/spring.factories中找到SpringApplicationRunListener
+private SpringApplicationRunListeners getRunListeners(String[] args) {
+    Class<?>[] types = new Class[]{SpringApplication.class, String[].class};
+    return new SpringApplicationRunListeners(logger, this.getSpringFactoriesInstances(SpringApplicationRunListener.class, types, this, args));
+}
+跟getSpringFactoriesInstances()方法：
+private <T> Collection<? extends T> getSpringFactoriesInstances(Class<T> type, Class<?>[] parameterTypes, Object... args) {
+    ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+    Set<String> names = new LinkedHashSet(SpringFactoriesLoader.loadFactoryNames(type, classLoader));
+    List<T> instances = this.createSpringFactoriesInstances(type, parameterTypes, classLoader, args, names);
+    AnnotationAwareOrderComparator.sort(instances);
+    return instances;
+}
+-->org.springframework.boot.SpringApplication.getSpringFactoriesInstances(Class<T>, Class<?>[], Object...)
+		// 加载/META/spring.factories文件里找到 org.springframework.boot.SpringApplicationRunListener 配置的值
+		// 此时配置的 值只有1个 等于org.springframework.boot.context.event.EventPublishingRunListener
+跟createSpringFactoriesInstances()方法：
+private <T> List<T> createSpringFactoriesInstances(Class<T> type, Class<?>[] parameterTypes, ClassLoader classLoader, Object[] args, Set<String> names) {
+    List<T> instances = new ArrayList(names.size());
+    Iterator var7 = names.iterator();
+    while(var7.hasNext()) {
+        String name = (String)var7.next();
+        try {
+            Class<?> instanceClass = ClassUtils.forName(name, classLoader);
+            // 判断EventPublishingRunListener是否是SpringApplicationRunListener接口的实现类
+            Assert.isAssignable(type, instanceClass);
+            // 根据传入的args获取 EventPublishingRunListener对应的构造器
+            Constructor<?> constructor = instanceClass.getDeclaredConstructor(parameterTypes);
+            // 跟BeanUtils#instantiateClass()
+            T instance = BeanUtils.instantiateClass(constructor, args);
+            instances.add(instance);
+        } catch (Throwable var12) {...}
+    }
+    return instances;
+}
+跟跟BeanUtils#instantiateClass()：
+public static <T> T instantiateClass(Constructor<T> ctor, Object... args) throws BeanInstantiationException {
+    Assert.notNull(ctor, "Constructor must not be null");
+    try {
+        // 将构造器暴力破解
+        ReflectionUtils.makeAccessible(ctor);
+        // 进入EventPublishingRunListener构造方法，如下：
+        return ctor.newInstance(args);
+    } catch (Exception e) {...}
+}
+进入EventPublishingRunListener构造方法：
+public EventPublishingRunListener(SpringApplication application, String[] args) {
+    this.application = application;
+    this.args = args;
+    this.initialMulticaster = new SimpleApplicationEventMulticaster();
+    for (ApplicationListener<?> listener : application.getListeners()) {
+        this.initialMulticaster.addApplicationListener(listener);
+    }
+}
+获得SpringApplication 中的listeners 依次添加到SimpleApplicationEventMulticaster中的defaultRetriever.applicationListeners 中；
+SpringApplication 中的listeners什么时候赋值的呢？如下：
+SpringApplication # initialize()
+private void initialize(Object[] sources) {
+    if (sources != null && sources.length > 0) {
+         this.sources.addAll(Arrays.asList(sources));
+     }
+     this.webEnvironment = this.deduceWebEnvironment();
+     this.setInitializers(this.getSpringFactoriesInstances(ApplicationContextInitializer.class));
+     // getSpringFactoriesInstances(ApplicationListener.class)获得/MET-INF/spring.factories中获取关于ApplicationListener的配置，然后给listeners赋值
+     this.setListeners(this.getSpringFactoriesInstances(ApplicationListener.class));
+     this.mainApplicationClass = this.deduceMainApplicationClass();
+}
+回到SpringApplication # getRunListener():
+private SpringApplicationRunListeners getRunListeners(String[] args) {
+    Class<?>[] types = new Class[]{SpringApplication.class, String[].class};
+    // getSpringFactoriesInstances()后会 初始化SpringApplicationRunListeners，跟new SpringApplicationRunListeners()代码如下：
+    return new SpringApplicationRunListeners(logger, this.getSpringFactoriesInstances(SpringApplicationRunListener.class, types, this, args));
+}
+SpringApplicationRunListeners # SpringApplicationRunListeners()
+SpringApplicationRunListeners(Log log,
+        Collection<? extends SpringApplicationRunListener> listeners) {
+    this.log = log;
+    this.listeners = new ArrayList<SpringApplicationRunListener>(listeners);
+}
+然后调用 SpringApplicationRunListeners # starting()方法
+public void starting() {
+    // 遍历SpringApplicationRunListener接口的所有实现类，目前listeners里只有一个EventPublishingRunListener实现类，并调用其listener.starting();方法
+    for (SpringApplicationRunListener listener : this.listeners) {
+        // 调用 SpringApplicationRunListener接口实现类EventPublishingRunListener的starting()方法，跟进去如下：
+        listener.starting();
+    }
+}
+EventPublishingRunListener.starting()方法
+@Override
+public void starting() {
+    // initialMulticaster是一个转发器，multicastEvent()发布一个ApplicationStartedEvent事件，跟multicastEvent()方法
+    this.initialMulticaster.multicastEvent(new ApplicationStartedEvent(this.application, this.args));
+}
+SimpleApplicationEventMulticaster.multicastEvent()方法
+public void multicastEvent(ApplicationEvent event) {
+    // 跟 resolveDefaultEventType(event)方法
+    this.multicastEvent(event, this.resolveDefaultEventType(event));
+}
+SimpleApplicationEventMulticaster.resolveDefaultEventType()方法
+private ResolvableType resolveDefaultEventType(ApplicationEvent event) {
+    // 跟 forInstance(event)方法
+    return ResolvableType.forInstance(event);
+}
+ResolvableType.forInstance()
+public static ResolvableType forInstance(Object instance) {
+    Assert.notNull(instance, "Instance must not be null");
+    // 判断传入的instance 是否是ResolvableTypeProvider的实例，如果不是，执行最后一句 return
+    if (instance instanceof ResolvableTypeProvider) {
+        ResolvableType type = ((ResolvableTypeProvider) instance).getResolvableType();
+        if (type != null) {
+            return type;
+        }
+    }
+    // 创建对应的 ResolvableType，跟 forClass()方法
+    return ResolvableType.forClass(instance.getClass());
+}
+ResolvableType.forClass(Class<?> baseType, Class<?> implementationClass)
+public static ResolvableType forClass(Class<?> baseType, Class<?> implementationClass) {
+    Assert.notNull(baseType, "Base type must not be null");
+    ResolvableType asType = forType(implementationClass).as(baseType);
+    return (asType == NONE ? forType(baseType) : asType);
+}
+ResolvableType.ResolvableType(Class<?> clazz) 直接实例化一个ResolvableType对象；
+private ResolvableType(Class<?> clazz) {
+    this.resolved = (clazz != null ? clazz : Object.class); // clazz即 ApplicationStartedEvent.class
+    this.type = this.resolved;
+    this.typeProvider = null;
+    this.variableResolver = null;
+    this.componentType = null;
+    this.hash = null;
+}
+SimpleApplicationEventMulticaster.multicastEvent(final ApplicationEvent event, ResolvableType eventType) 真正发布事件
+public void multicastEvent(final ApplicationEvent event, ResolvableType eventType) {
+    ResolvableType type = eventType != null ? eventType : this.resolveDefaultEventType(event);
+    Iterator var4 = this.getApplicationListeners(event, type).iterator();
+    while(var4.hasNext()) {
+        final ApplicationListener<?> listener = (ApplicationListener)var4.next();
+        Executor executor = this.getTaskExecutor();
+        if (executor != null) {
+            executor.execute(new Runnable() {
+                public void run() {
+                    SimpleApplicationEventMulticaster.this.invokeListener(listener, event);
+                }
+            });
+        } else {
+            this.invokeListener(listener, event);
+        }
+    }
+}
+
+
+
