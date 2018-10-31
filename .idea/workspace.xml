@@ -2,44 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3755dfef-3cce-4990-8adc-741d81bbb835" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/note/二月_春风/Springboot @Enable注解的工作原理.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/note/二月_春风/二月_春风springboot.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/note/龙果学院/run()方法启动-4步.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/EchoBeanPostProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/annotation/EnableLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/config/MyConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/importor/MyImportBeanDefinitionRegistrar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/importor/MyImportSelector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/Cat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/Dog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/People.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/ServerBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/test/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/thread/UserRunnable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_8_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_8_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_5_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_5_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_annotations_api_8_5_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_3_6_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_1_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_1_5_9_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_1_5_9_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_13_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_13_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/springboot源码解析-龙果学院.txt" beforeDir="false" afterPath="$PROJECT_DIR$/note/龙果学院/springboot源码解析-龙果学院.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/源码调试过程笔记.txt" beforeDir="false" afterPath="$PROJECT_DIR$/note/龙果学院/run()方法启动-1-3步.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-boot-analysis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-analysis/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-boot-analysis/spring-boot-analysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-analysis/spring-boot-analysis.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/SpringBootAnalysisApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/SpringBootAnalysisApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-boot-analysis/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/二月_春风/Springboot @Enable注解的工作原理.txt" beforeDir="false" afterPath="$PROJECT_DIR$/note/二月_春风/Springboot @Enable注解的工作原理.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/spring-framework-4.3.13.RELEASE/spring-test/.gradle/" />
     <ignored path="$PROJECT_DIR$/spring-framework-4.3.13.RELEASE/spring-test/build/" />
@@ -244,43 +207,7 @@
         <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/SpringBootAnalysisApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
-              <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EnableAsync.java" pinned="false" current-in-tab="false">
-        <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/scheduling/annotation/EnableAsync.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="157" column="22" selection-start-line="157" selection-start-column="22" selection-end-line="157" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Springboot @Enable注解的工作原理.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/note/二月_春风/Springboot @Enable注解的工作原理.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="297" column="33" selection-start-line="297" selection-start-column="33" selection-end-line="297" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImportBeanDefinitionRegistrar.java" pinned="false" current-in-tab="false">
-        <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/context/annotation/ImportBeanDefinitionRegistrar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="671">
-              <caret line="63" column="1" lean-forward="true" selection-start-line="49" selection-end-line="63" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyImportSelector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/importor/MyImportSelector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <caret line="16" column="5" selection-start-line="16" selection-end-line="16" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -289,16 +216,25 @@
         <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/annotation/EnableLog.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="287">
-              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImportSelector.java" pinned="false" current-in-tab="false">
-        <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/context/annotation/ImportSelector.java">
+      <file leaf-file-name="Import.java" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/context/annotation/Import.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="47" selection-start-line="47" selection-end-line="55" selection-end-column="1" />
+            <state relative-caret-position="179">
+              <caret line="53" column="18" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Springboot @Enable注解的工作原理.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/note/二月_春风/Springboot @Enable注解的工作原理.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-615">
+              <caret line="240" column="78" selection-start-line="240" selection-start-column="78" selection-end-line="240" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -374,6 +310,7 @@
         <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/importor/MyImportSelector.java" />
         <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/SpringBootAnalysisApplication.java" />
         <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/importor/MyImportBeanDefinitionRegistrar.java" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/annotation/EnableImportConfig.java" />
         <option value="$PROJECT_DIR$/note/二月_春风/Springboot @Enable注解的工作原理.txt" />
       </list>
     </option>
@@ -511,6 +448,16 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="springbootanalysis" type="462c0819:PsiDirectoryNode" />
               <item name="importor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-lgedu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-lgedu" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-boot-analysis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="springbootanalysis" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="springboot-lgedu" type="b2602c69:ProjectViewProjectNode" />
@@ -678,12 +625,12 @@
       <workItem from="1539418888845" duration="15488000" />
       <workItem from="1539565400770" duration="16146000" />
       <workItem from="1540888899583" duration="5055000" />
-      <workItem from="1540953511683" duration="6763000" />
+      <workItem from="1540953511683" duration="8452000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78466000" />
+    <option name="totallyTimeSpent" value="80155000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -801,27 +748,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://D:/mavenRepository/org/springframework/spring-web/4.3.13.RELEASE/spring-web-4.3.13.RELEASE.jar!/org/springframework/web/context/support/StandardServletEnvironment.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/spring-web/4.3.13.RELEASE/spring-web-4.3.13.RELEASE.jar!/org/springframework/web/context/support/GenericWebApplicationContext.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE.jar!/org/springframework/context/support/AbstractApplicationContext.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="141" selection-start-line="141" selection-end-line="141" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/resources/application.properties" />
     <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/resources/application-test.properties" />
     <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/resources/application-dev.yml" />
@@ -952,16 +878,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/ServerBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="5" selection-start-line="5" selection-end-line="13" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
@@ -983,45 +899,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/scheduling/annotation/AsyncConfigurationSelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="30" column="64" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/context/annotation/AdviceModeImportSelector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="671">
           <caret line="89" column="1" lean-forward="true" selection-start-line="33" selection-end-line="89" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot-autoconfigure/1.5.9.RELEASE/spring-boot-autoconfigure-1.5.9.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/EnableAutoConfigurationImportSelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="34" selection-start-line="34" selection-end-line="48" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot-autoconfigure/1.5.9.RELEASE/spring-boot-autoconfigure-1.5.9.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/EnableAutoConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="80" column="3" lean-forward="true" selection-start-line="80" selection-start-column="3" selection-end-line="80" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/context/annotation/Import.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="61" column="1" selection-start-line="50" selection-end-line="61" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/scheduling/annotation/EnableAsync.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="157" column="22" selection-start-line="157" selection-start-column="22" selection-end-line="157" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1085,34 +966,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/context/annotation/ImportSelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="47" selection-start-line="47" selection-end-line="55" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/annotation/EnableLog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/importor/MyImportSelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/SpringBootAnalysisApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/context/annotation/ImportBeanDefinitionRegistrar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="671">
@@ -1130,10 +983,107 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/ServerBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-223">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/scheduling/annotation/AsyncConfigurationSelector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-231">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/scheduling/annotation/EnableAsync.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="157" column="21" lean-forward="true" selection-start-line="157" selection-start-column="21" selection-end-line="157" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/context/annotation/DeferredImportSelector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="657">
+          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot-autoconfigure/1.5.9.RELEASE/spring-boot-autoconfigure-1.5.9.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/AutoConfigurationImportSelector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="69" column="32" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot-autoconfigure/1.5.9.RELEASE/spring-boot-autoconfigure-1.5.9.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/EnableAutoConfigurationImportSelector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="861">
+          <caret line="36" column="30" lean-forward="true" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot-autoconfigure/1.5.9.RELEASE/spring-boot-autoconfigure-1.5.9.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/EnableAutoConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="80" column="25" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/annotation/EnableImportConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/SpringBootAnalysisApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="16" column="5" selection-start-line="16" selection-end-line="16" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/annotation/EnableLog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/context/annotation/Import.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="53" column="18" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/importor/MyImportSelector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/context/annotation/ImportSelector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/note/二月_春风/Springboot @Enable注解的工作原理.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="297" column="33" selection-start-line="297" selection-start-column="33" selection-end-line="297" selection-end-column="33" />
+        <state relative-caret-position="-615">
+          <caret line="240" column="78" selection-start-line="240" selection-start-column="78" selection-end-line="240" selection-end-column="78" />
         </state>
       </provider>
     </entry>

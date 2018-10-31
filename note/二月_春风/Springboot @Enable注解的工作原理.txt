@@ -22,9 +22,8 @@ public class Application {
 4、打印：
 ServerBean{ip='192.168.1.111', port=8090}
 5、我们发现这个程序自动的会把配置文件注入到bean中，原因在哪里呢？
-之前我们讲过启动类上的注解@SpringBootApplication是一个复合注解，其由@SpringBootConfiguration，@EnableAutoConfiguration，@ComponentScan三个注解组成，@SpringBootConfiguration和@ComponentScan我们在
-springboot快速入门及@SpringBootApplication注解分析
-分析过了，那么故名思义，我们知道肯定是@EnableAutoConfiguration注解的作用了；
+启动类上的注解@SpringBootApplication是一个复合注解，其由@SpringBootConfiguration，@EnableAutoConfiguration，@ComponentScan三个注解组成，肯定是@EnableAutoConfiguration
+注解的作用了；
 6、修改启动类，
 @EnableAutoConfiguration
 @ComponentScan
@@ -44,7 +43,7 @@ public class Application {
     }
 }
 *********
-8、@EnableConfigurationProperties注解一般和ConfigurationProperties注解搭配使用，可以将配置文件属性注入到bean中；
+8、@EnableConfigurationProperties注解一般和@ConfigurationProperties注解搭配使用，表示激活这个注解，可以将配置文件属性注入到bean中；
 *********
 第二个demo
 定义一个类UserRunnable，纳入到spring容器中：
@@ -103,7 +102,7 @@ public class UserRunnable implements Runnable{
 }
 13、修改启动启动类，加@EnableAsync注解，从打印结果发现，父线程与子线程已经实现异步；注意，context.getBean(Runnable.class)获取的是 Runnable.class了
 @SpringBootApplication
-@EnableAsync
+@EnableAsync    // @EnableAsync激活 @Async
 public class Application {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(Application.class,args);
@@ -117,7 +116,7 @@ public class Application {
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Import(AsyncConfigurationSelector.class)
+@Import(AsyncConfigurationSelector.class)   //含义：导入 AsyncConfigurationSelector中封装的所有实例到spring容器；即@EnableAsync注解会导入该类里面所有bean；
 public @interface EnableAsync {
 	Class<? extends Annotation> annotation() default Annotation.class;
 	boolean proxyTargetClass() default false;
@@ -140,6 +139,7 @@ public class AsyncConfigurationSelector extends AdviceModeImportSelector<EnableA
 		}
 	}
 }
+AsyncConfigurationSelector类的selectImports()会返回一个 String[]，这个数组里面的每个beanName都会实例化到Spring容器中；
 3、跟AsyncConfigurationSelector的父类 AdviceModeImportSelector<EnableAsync>
 public abstract class AdviceModeImportSelector<A extends Annotation> implements ImportSelector {
     ...
@@ -183,7 +183,7 @@ public @interface Import {
 @Import其实就是引入一个或多个配置，可以导入普通类，也可以导入配置类。
 @Import用来导入一个或多个类（会被spring容器管理），或者配置类（配置类里的@Bean标记的类也会被spring容器管理）
 2、看一个demo，定义四个实体类，User，People，Cat，Dog及配置类 MyConfig：
-public class User {},public class People{},public class Cat {},public class Dog {}
+public class User {}; public class People{}; public class Cat {}; public class Dog {};
 
 public class MyConfig {
     @Bean
@@ -196,7 +196,7 @@ public class MyConfig {
     }
 }
 3、我们要将这四个类纳入到spring容器中，我们之前的做法是在User，People上加上了@Component注解(或者@Service，@Controller）或者在MyConfig类上加上@Configuration
-注解，很显然我们这边并没有这般做，使用@Import注解也可以 将对象纳入到spring容器中；
+注解，很显然我们这边并没有这样做，使用@Import注解也可以 将对象纳入到spring容器中；
 启动类如下，@@Import({User.class,People.class, MyConfig.class}) 直接将User和People加载到spring容器，并将MyConfig这个配置bean中所有@Bean加载到spring容器；
 @Import({User.class,People.class, MyConfig.class})
 public class Application {
@@ -220,7 +220,7 @@ public interface ImportSelector {
 	String[] selectImports(AnnotationMetadata importingClassMetadata);
 }
 接口被实现那些Configuration的类被导入到spring容器根据指定的一些条件，通常是一个到多个导入类的注解属性。
-实现ImportSelectors接口的类通常与常规的@Import注解作用相同，然而，它也可能被延迟处理直到所有被@Configuration标记的类处理完之后采取处理；
+实现ImportSelectors接口的类通常与常规的@Import注解作用相同，然而，它也可能被延迟处理直到所有被@Configuration标记的类处理完之后才去处理；
 2、定义一个MyImportSelector继承ImportSelector，ImportSelector返回的String[]数组是类的全类名 会被纳入到spring容器内；
 /**
  * selectImports方法的返回值，必须是一个class（全称），该class会被spring容器所托管起来
@@ -238,7 +238,7 @@ public class MyImportSelector implements ImportSelector{
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Import(MyImportSelector.class)
+@Import(MyImportSelector.class) //@Import(MyImportSelector.class)即@Enable表示 自动将MyImportSelector.selectImports()方法返回的String[]中的所有类全名实例化到Spring容器中
 public @interface EnableLog {
     String name();
 }
