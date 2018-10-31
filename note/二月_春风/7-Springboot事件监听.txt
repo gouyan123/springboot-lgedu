@@ -1,0 +1,168 @@
+1、定义一个自定义事件，继承ApplicationEvent类：
+public class MyApplicationEvent extends ApplicationEvent {
+    private static final long serialVersionUID = 1L;
+    public MyApplicationEvent(Object source) {
+        super(source);
+    }
+}
+2、定义一个事件监听器MyApplicationListener实现ApplicationListener接口：
+public class MyApplicationListener implements ApplicationListener<MyApplicationEvent> {
+    @Override
+    public void onApplicationEvent(MyApplicationEvent event) {
+        System.out.println("接收到事件："+event.getClass());
+    }
+}
+3、启动类：
+@SpringBootApplication
+public class Application {
+    public static void main(String[] args) {
+        SpringApplication application = new SpringApplication(Application.class);
+        //方式一：将监听器实例化到spring容器中
+        application.addListeners(new MyApplicationListener());
+        ConfigurableApplicationContext context =application.run(args);
+        //发布事件
+        context.publishEvent(new MyApplicationEvent(new Object()));
+        context.close();
+    }
+}
+输出结果：接收到事件：class com.gouyan.springbootanalysis.event.MyApplicationEvent
+4、总结：springboot事件监听的流程：
+    1、自定义事件，一般是继承ApplicationEvent抽象类；
+    2、自定义事件监听器，一般是实现ApplicationListener接口；
+    3、配置监听器，启动的时候，需要把监听器加入到spring容器中；
+    4、发布事件；
+第一种方式：其中第3步（将监听器纳入到spring容器）除了上面的方法 application.addListeners(new MyApplicationListener());之外，还有三种方法：
+第二种方式：直接在MyApplicationListener类上加上@Component注解，纳入spring容器管理；
+第三种方式：在配置文件中配置，context.listener.classes=com.zhihao.miao.MyApplicationListener；
+---
+源码分析：①获取所有事件监听器；②每个事件监听器都有一个 监听事件；③跟context.publishEvent(event)发布的事件 相同的监听器都会被触发；
+1、进入DelegatingApplicationListener类中的onApplicationEvent方法，getListeners()是获取当前项目中的所有事件监听器：
+public class DelegatingApplicationListener implements ApplicationListener<ApplicationEvent>, Ordered {
+	private static final String PROPERTY_NAME = "context.listener.classes"; //配置文件中配置的
+	private int order = 0;
+	private SimpleApplicationEventMulticaster multicaster;
+	@Override
+	public void onApplicationEvent(ApplicationEvent event) {
+		if (event instanceof ApplicationEnvironmentPreparedEvent) {
+		    //获取当前项目中的所有事件监听器
+			List<ApplicationListener<ApplicationEvent>> delegates = getListeners(((ApplicationEnvironmentPreparedEvent) event).getEnvironment());
+			if (delegates.isEmpty()) {
+				return;
+			}
+			this.multicaster = new SimpleApplicationEventMulticaster();
+			for (ApplicationListener<ApplicationEvent> listener : delegates) {
+				//将事件监听器加入到spring容器中
+				this.multicaster.addApplicationListener(listener);
+			}
+		}
+		if (this.multicaster != null) {
+			this.multicaster.multicastEvent(event);
+		}
+	}
+	@SuppressWarnings("unchecked")
+	private List<ApplicationListener<ApplicationEvent>> getListeners(ConfigurableEnvironment environment) {
+		if (environment == null) {
+			return Collections.emptyList();
+		}
+		//得到配置的 事件监听器集合
+		String classNames = environment.getProperty(PROPERTY_NAME);
+		List<ApplicationListener<ApplicationEvent>> listeners = new ArrayList<ApplicationListener<ApplicationEvent>>();
+		if (StringUtils.hasLength(classNames)) {
+			for (String className : StringUtils.commaDelimitedListToSet(classNames)) {
+				try {
+					Class<?> clazz = ClassUtils.forName(className,
+							ClassUtils.getDefaultClassLoader());
+					Assert.isAssignable(ApplicationListener.class, clazz, "class ["
+							+ className + "] must implement ApplicationListener");
+					listeners.add((ApplicationListener<ApplicationEvent>) BeanUtils
+							.instantiateClass(clazz));
+				}
+				catch (Exception ex) {
+					throw new ApplicationContextException(
+							"Failed to load context listener class [" + className + "]",
+							ex);
+				}
+			}
+		}
+		AnnotationAwareOrderComparator.sort(listeners);
+		return listeners;
+	}
+	public void setOrder(int order) {
+		this.order = order;
+	}
+	@Override
+	public int getOrder() {
+		return this.order;
+	}
+}
+---
+第四种方式：使用@EventListener注解，将监听器加入spring容器；
+1、创建 MyEventHandle
+package com.gouyan.springbootanalysis.event;
+@Component
+public class MyEventHandle {
+    /**参数任意(为Object）的时候所有事件都会监听到，所有，该参数事件，或者其子事件（子类）都可以接收到*/
+    @EventListener
+    public void event(Object event){
+        System.out.println("MyEventHandle 接收到事件：" + event.getClass());
+    }
+}
+2、主类测试：
+@SpringBootApplication
+public class Application {
+  public static void main(String[] args) {
+      SpringApplication application = new SpringApplication(Application.class);
+      ConfigurableApplicationContext context =application.run(args);
+      //发布事件
+      context.publishEvent(new MyApplicationEvent(new Object()));
+      context.close();
+  }
+}
+输出结果：
+MyEventHandle 接收到事件：class org.springframework.context.event.ContextRefreshedEvent
+MyEventHandle 接收到事件：class org.springframework.boot.context.event.ApplicationReadyEvent
+MyEventHandle 接收到事件：class com.gouyan.springbootanalysis.event.MyApplicationEvent
+MyEventHandle 接收到事件：class org.springframework.context.event.ContextClosedEvent
+---
+源码分析：
+1、进入@EventListener注解，处理@EventListener主要依靠EventListenerMethodProcessor，然后进入EventListenerMethodProcessor中：
+public class EventListenerMethodProcessor implements SmartInitializingSingleton, ApplicationContextAware {
+    protected void processBean(final List<EventListenerFactory> factories, final String beanName, final Class<?> targetType) {
+    		if (!this.nonAnnotatedClasses.contains(targetType)) {
+    			Map<Method, EventListener> annotatedMethods = null;
+    			try {
+    				annotatedMethods = MethodIntrospector.selectMethods(targetType,new MethodIntrospector.MetadataLookup<EventListener>() {
+                        @Override
+                        public EventListener inspect(Method method) {
+                            // 扫描所有 @EventListener注解
+                            return AnnotatedElementUtils.findMergedAnnotation(method, EventListener.class);
+                        }
+                    });
+    			}
+    			...
+    			else {
+                    // 1 循环annotatedMethods.keySet()，得到所有 @EventListener注解标记的方法；2 通过EventListenerFactory创建 ApplicationListener；
+    				for (Method method : annotatedMethods.keySet()) {
+    					for (EventListenerFactory factory : factories) {
+    						if (factory.supportsMethod(method)) {
+    							Method methodToUse = AopUtils.selectInvocableMethod(method, this.applicationContext.getType(beanName));
+    							ApplicationListener<?> applicationListener = factory.createApplicationListener(beanName, targetType, methodToUse);
+    							if (applicationListener instanceof ApplicationListenerMethodAdapter) {
+    								((ApplicationListenerMethodAdapter) applicationListener).init(this.applicationContext, this.evaluator);
+    							}
+    							this.applicationContext.addApplicationListener(applicationListener);
+    							break;
+    						}
+    					}
+    				}
+    				...
+    			}
+    		}
+    	}
+}
+---
+总结：配置事件监听器的四种方法：
+1 SpringApplication.addListeners() 添加监听器;
+2 @Component把监听器纳入到spring容器中管理;
+3 使用context.listener.classes配置项配置，详细内容参照 DelegatingApplicationListener
+4 使用@EventListener注解，在方法上面加入@EventListener注解，且该类需要纳入到spring容器中管理，详细内容参照 EventListenerMethodProcessor和EventListenerFactory

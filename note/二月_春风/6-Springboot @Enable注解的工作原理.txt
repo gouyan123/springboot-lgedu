@@ -161,14 +161,9 @@ public @interface EnableAutoConfiguration {
 2、跟@EnableAutoConfiguration注解的父注解 @Import(EnableAutoConfigurationImportSelector.class)中的EnableAutoConfigurationImportSelector
 @Deprecated
 public class EnableAutoConfigurationImportSelector extends AutoConfigurationImportSelector {
-	@Override
-	protected boolean isEnabled(AnnotationMetadata metadata) {
-		if (getClass().equals(EnableAutoConfigurationImportSelector.class)) {
-			return getEnvironment().getProperty(
-					EnableAutoConfiguration.ENABLED_OVERRIDE_PROPERTY, Boolean.class,
-					true);
-		}
-		return true;
+	public String[] selectImports(AnnotationMetadata annotationMetadata) {
+        ...
+        return configurations.toArray(new String[configurations.size()]);
 	}
 }
 发现 @Enable*注解 都使用到了@Import注解，最后也是实现ImportSelector接口；
@@ -264,17 +259,15 @@ com.gouyan.springbootanalysis.model.People@3a01dcd7
 public interface ImportBeanDefinitionRegistrar {
 	public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry);
 }
-接口实现可以额外的注册类的定义到spring容器中；
+实现接口 可以额外的注册类的定义 到spring容器中；
 2、定义MyImportBeanDefinitionRegistrar实现ImportBeanDefinitionRegistrar接口，将User类，People类，Myconfig中的Dog和Cat类注入到spring容器中：
 public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
      @Override
      public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
          BeanDefinitionBuilder bdb = BeanDefinitionBuilder.rootBeanDefinition(People.class);
          registry.registerBeanDefinition(People.class.getName(),bdb.getBeanDefinition());
-
          BeanDefinitionBuilder bdb2 = BeanDefinitionBuilder.rootBeanDefinition(User.class);
          registry.registerBeanDefinition(User.class.getName(),bdb2.getBeanDefinition());
-
          BeanDefinitionBuilder bdb3 = BeanDefinitionBuilder.rootBeanDefinition(MyConfig.class);
          registry.registerBeanDefinition(MyConfig.class.getName(),bdb3.getBeanDefinition());
      }
@@ -314,3 +307,5 @@ public class Application4 {
     }
 }
 也是可以将这些对象注入到spring容器的；
+---
+总结：@Enable*注解上面都有一个 @Import(A.class)，表示@Enable*自动导入 A.class中的bean到Spring容器中；
