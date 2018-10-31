@@ -1,0 +1,316 @@
+1、定义一个实体类：ServerBean如下：
+/**被@ComponentScan注解扫描后，实例化bean到spring容器*/
+@Component
+/**@ConfigurationProperties 将默认配置转换成 Configuration；@PropertySource(classpath:/)可以指定自定义配置文件 路径名称*/
+@ConfigurationProperties(prefix = "instance")
+public class ServerBean {
+    private String ip;
+    private Integer port;
+    ...
+}
+2、application.yml配置文件配置：
+instance.ip=192.168.1.111
+instance.port=8090
+3、启动类启动，
+@SpringBootApplication
+public class Application {
+  public static void main(String[] args) {
+      ConfigurableApplicationContext context = SpringApplication.run(Application.class,args);
+      System.out.println(context.getBean(ServerBean.class));
+  }
+}
+4、打印：
+ServerBean{ip='192.168.1.111', port=8090}
+5、我们发现这个程序自动的会把配置文件注入到bean中，原因在哪里呢？
+之前我们讲过启动类上的注解@SpringBootApplication是一个复合注解，其由@SpringBootConfiguration，@EnableAutoConfiguration，@ComponentScan三个注解组成，@SpringBootConfiguration和@ComponentScan我们在
+springboot快速入门及@SpringBootApplication注解分析
+分析过了，那么故名思义，我们知道肯定是@EnableAutoConfiguration注解的作用了；
+6、修改启动类，
+@EnableAutoConfiguration
+@ComponentScan
+public class Application {
+  public static void main(String[] args) {
+      ConfigurableApplicationContext context = SpringApplication.run(Application.class,args);
+      System.out.println(context.getBean(ServerBean.class));
+  }
+}
+7、发现打印结果还是一样，然后再去修改一下启动类，使用@EnableConfigurationProperties也可以替换@EnableAutoConfiguration
+@EnableConfigurationProperties
+@ComponentScan
+public class Application {
+    public static void main(String[] args) {
+        ConfigurableApplicationContext context = SpringApplication.run(Application.class,args);
+        System.out.println(context.getBean(ServerBean.class));
+    }
+}
+*********
+8、@EnableConfigurationProperties注解一般和ConfigurationProperties注解搭配使用，可以将配置文件属性注入到bean中；
+*********
+第二个demo
+定义一个类UserRunnable，纳入到spring容器中：
+package com.gouyan.springbootanalysis.thread;
+@Component
+public class UserRunnable implements Runnable{
+    @Override
+    public void run() {
+        try{
+            for (int i = 0; i <10 ; i++) {
+                System.out.println("============"+i);
+                TimeUnit.SECONDS.sleep(1);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}
+9、启动类：
+@SpringBootApplication
+public class Application {
+  public static void main(String[] args) {
+      ConfigurableApplicationContext context = SpringApplication.run(Application.class,args);
+      UserRunnable userRunnable = context.getBean(UserRunnable.class);
+      userRunnable.run();
+      System.out.println("end");
+  }
+}
+10、打印结果：
+============0
+============1
+============2
+============3
+============4
+============5
+============6
+============7
+============8
+============9
+end
+11、我们发现执行过程是一个同步的过程，只有userRunnable.run()方法执行完毕之后 才执行下面的 end打印过程:
+12、修改一下UserRunnable代码，将UserRunnable的run方法上加入@Async注解
+@Component
+public class UserRunnable implements Runnable{
+    @Override
+    @Async
+    public void run() {
+        try{
+            for (int i = 0; i <10 ; i++) {
+                System.out.println("============"+i);
+                TimeUnit.SECONDS.sleep(1);
+            }
+        }catch (Exception e){...
+        }
+    }
+}
+13、修改启动启动类，加@EnableAsync注解，从打印结果发现，父线程与子线程已经实现异步；注意，context.getBean(Runnable.class)获取的是 Runnable.class了
+@SpringBootApplication
+@EnableAsync
+public class Application {
+    public static void main(String[] args) {
+        ConfigurableApplicationContext context = SpringApplication.run(Application.class,args);
+        context.getBean(Runnable.class).run();
+        System.out.println("end");
+    }
+}
+---
+---分析：
+1、跟@EnableAsync注解：
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Import(AsyncConfigurationSelector.class)
+public @interface EnableAsync {
+	Class<? extends Annotation> annotation() default Annotation.class;
+	boolean proxyTargetClass() default false;
+	AdviceMode mode() default AdviceMode.PROXY;
+	int order() default Ordered.LOWEST_PRECEDENCE;
+}
+2、跟@EnableAsync注解的 @Import(AsyncConfigurationSelector.class)中的AsyncConfigurationSelector.class；@Import()表示导入某个类或某个配置中所有类到spring容器；
+public class AsyncConfigurationSelector extends AdviceModeImportSelector<EnableAsync> {
+	private static final String ASYNC_EXECUTION_ASPECT_CONFIGURATION_CLASS_NAME =
+			"org.springframework.scheduling.aspectj.AspectJAsyncConfiguration";
+	@Override
+	public String[] selectImports(AdviceMode adviceMode) {
+		switch (adviceMode) {
+			case PROXY:
+				return new String[] { ProxyAsyncConfiguration.class.getName() };
+			case ASPECTJ:
+				return new String[] { ASYNC_EXECUTION_ASPECT_CONFIGURATION_CLASS_NAME };
+			default:
+				return null;
+		}
+	}
+}
+3、跟AsyncConfigurationSelector的父类 AdviceModeImportSelector<EnableAsync>
+public abstract class AdviceModeImportSelector<A extends Annotation> implements ImportSelector {
+    ...
+}
+发现最后实现了 ImportSelector接口；
+--
+1、跟 @EnableAutoConfiguration注解 如下：
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Inherited
+@AutoConfigurationPackage
+@Import(EnableAutoConfigurationImportSelector.class)
+public @interface EnableAutoConfiguration {
+	String ENABLED_OVERRIDE_PROPERTY = "spring.boot.enableautoconfiguration";
+	Class<?>[] exclude() default {};
+	String[] excludeName() default {};
+}
+2、跟@EnableAutoConfiguration注解的父注解 @Import(EnableAutoConfigurationImportSelector.class)中的EnableAutoConfigurationImportSelector
+@Deprecated
+public class EnableAutoConfigurationImportSelector extends AutoConfigurationImportSelector {
+	@Override
+	protected boolean isEnabled(AnnotationMetadata metadata) {
+		if (getClass().equals(EnableAutoConfigurationImportSelector.class)) {
+			return getEnvironment().getProperty(
+					EnableAutoConfiguration.ENABLED_OVERRIDE_PROPERTY, Boolean.class,
+					true);
+		}
+		return true;
+	}
+}
+发现 @Enable*注解 都使用到了@Import注解，最后也是实现ImportSelector接口；
+--
+1、跟@Import注解：
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface Import {
+	Class<?>[] value();
+}
+@Import其实就是引入一个或多个配置，可以导入普通类，也可以导入配置类。
+@Import用来导入一个或多个类（会被spring容器管理），或者配置类（配置类里的@Bean标记的类也会被spring容器管理）
+2、看一个demo，定义四个实体类，User，People，Cat，Dog及配置类 MyConfig：
+public class User {},public class People{},public class Cat {},public class Dog {}
+
+public class MyConfig {
+    @Bean
+    public Dog dog(){
+        return new Dog();
+    }
+    @Bean
+    public Cat cat(){
+        return new Cat();
+    }
+}
+3、我们要将这四个类纳入到spring容器中，我们之前的做法是在User，People上加上了@Component注解(或者@Service，@Controller）或者在MyConfig类上加上@Configuration
+注解，很显然我们这边并没有这般做，使用@Import注解也可以 将对象纳入到spring容器中；
+启动类如下，@@Import({User.class,People.class, MyConfig.class}) 直接将User和People加载到spring容器，并将MyConfig这个配置bean中所有@Bean加载到spring容器；
+@Import({User.class,People.class, MyConfig.class})
+public class Application {
+    public static void main(String[] args) {
+        ConfigurableApplicationContext context = SpringApplication.run(Application.class,args);
+        System.out.println(context.getBean(User.class));
+        System.out.println(context.getBean(Dog.class));
+        System.out.println(context.getBean(Cat.class));
+        System.out.println(context.getBean(People.class));
+    }
+}
+打印结果：
+com.gouyan.springbootanalysis.model.User@12a2593e
+com.gouyan.springbootanalysis.model.Dog@37311842
+com.gouyan.springbootanalysis.model.Cat@91cbac3
+com.gouyan.springbootanalysis.model.People@73d3d721
+--
+1、跟 ImportSelector接口
+public interface ImportSelector {
+	/**Select and return the names of which class(es) should be imported based on the {@link AnnotationMetadata} of the importing @{@link Configuration} class.*/
+	String[] selectImports(AnnotationMetadata importingClassMetadata);
+}
+接口被实现那些Configuration的类被导入到spring容器根据指定的一些条件，通常是一个到多个导入类的注解属性。
+实现ImportSelectors接口的类通常与常规的@Import注解作用相同，然而，它也可能被延迟处理直到所有被@Configuration标记的类处理完之后采取处理；
+2、定义一个MyImportSelector继承ImportSelector，ImportSelector返回的String[]数组是类的全类名 会被纳入到spring容器内；
+/**
+ * selectImports方法的返回值，必须是一个class（全称），该class会被spring容器所托管起来
+ */
+public class MyImportSelector implements ImportSelector{
+    @Override
+    public String[] selectImports(AnnotationMetadata importingClassMetadata) {
+        //获取注解的属性信息
+        System.out.println(importingClassMetadata.getAllAnnotationAttributes(EnableLog.class.getName()));
+       //这里可以获取到注解的详细信息，然后根据信息去动态的返回需要被spring容器管理的bean
+        return new String[]{"com.zhihao.miao.imp.bean.User",People.class.getName(),MyConfig.class.getName()};
+    }
+}
+3、定义一个EnableLog注解，可以得到属性的值，@Import(MyImportSelector.class)，可以在MyImportSelector中获取name属性值；
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Import(MyImportSelector.class)
+public @interface EnableLog {
+    String name();
+}
+4、启动类，在启动类上加入@EnableLog(name = "com.gouyan.springbootanalysis")注解，@EnableLog中@Import(MyImportSelector.class)会将MyImportSelector对象
+纳入到容器中；
+@EnableLog(name = "com.gouyan.springbootanalysis")
+public class Application2 {
+    public static void main(String[] args) {
+        ConfigurableApplicationContext context = SpringApplication.run(Application2.class,args);
+        System.out.println(context.getBean(User.class));
+        System.out.println(context.getBean(Dog.class));
+        System.out.println(context.getBean(Cat.class));
+        System.out.println(context.getBean(People.class));
+    }
+}
+5、打印内容如下：
+com.gouyan.springbootanalysis.model.User@29959f67
+com.gouyan.springbootanalysis.model.Dog@1231b39c
+com.gouyan.springbootanalysis.model.Cat@7fe813ec
+com.gouyan.springbootanalysis.model.People@3a01dcd7
+---
+1、跟ImportBeanDefinitionRegistrar接口
+public interface ImportBeanDefinitionRegistrar {
+	public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry);
+}
+接口实现可以额外的注册类的定义到spring容器中；
+2、定义MyImportBeanDefinitionRegistrar实现ImportBeanDefinitionRegistrar接口，将User类，People类，Myconfig中的Dog和Cat类注入到spring容器中：
+public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
+     @Override
+     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
+         BeanDefinitionBuilder bdb = BeanDefinitionBuilder.rootBeanDefinition(People.class);
+         registry.registerBeanDefinition(People.class.getName(),bdb.getBeanDefinition());
+
+         BeanDefinitionBuilder bdb2 = BeanDefinitionBuilder.rootBeanDefinition(User.class);
+         registry.registerBeanDefinition(User.class.getName(),bdb2.getBeanDefinition());
+
+         BeanDefinitionBuilder bdb3 = BeanDefinitionBuilder.rootBeanDefinition(MyConfig.class);
+         registry.registerBeanDefinition(MyConfig.class.getName(),bdb3.getBeanDefinition());
+     }
+ }
+3、启动类
+@Import(MyImportBeanDefinitionRegistrar.class)
+public class Application3 {
+  public static void main(String[] args) {
+      ConfigurableApplicationContext context = SpringApplication.run(Application3.class,args);
+      System.out.println(context.getBean(User.class));
+      System.out.println(context.getBean(Dog.class));
+      System.out.println(context.getBean(Cat.class));
+      System.out.println(context.getBean(People.class));
+  }
+}
+4、打印内容如下：
+com.gouyan.springbootanalysis.model.User@29959f67
+com.gouyan.springbootanalysis.model.Dog@1231b39c
+com.gouyan.springbootanalysis.model.Cat@7fe813ec
+com.gouyan.springbootanalysis.model.People@3a01dcd7
+5、当然也可以写成一个注解，@EnableImportConfig
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Import(MyImportBeanDefinitionRegistrar.class)
+public @interface EnableImportConfig {
+}
+6、启动类：
+@EnableImportConfig
+public class Application4 {
+    public static void main(String[] args) {
+        ConfigurableApplicationContext context = SpringApplication.run(Application4.class,args);
+        System.out.println(context.getBean(User.class));
+        System.out.println(context.getBean(Dog.class));
+        System.out.println(context.getBean(Cat.class));
+        System.out.println(context.getBean(People.class));
+    }
+}
+也是可以将这些对象注入到spring容器的；

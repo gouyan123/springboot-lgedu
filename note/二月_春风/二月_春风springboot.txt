@@ -1,0 +1,11 @@
+---
+BeanPostProcessor接口
+Factory hook that allows for custom modification of new bean instances,e.g. checking for marker interfaces or wrapping them with proxies.
+允许自定义修改的新的对象实例的工厂钩子，检查标记性接口或者包装成一个代理对象。
+ApplicationContexts可以在bean定义中自动检测BeanPostProcessor的beans并且将它们应用与随后创建的实例类中，纯bean实例工厂允许后处理器的编程注册，适用于通过该工厂
+创建的所有bean实例；
+通过标记接口等填充bean后处理器将实现{@link #postProcessBeforeInitialization方法}，而用代理机构包装bean的后处理器通常会补充{@link #postProcessAfterInitialization方法}
+定义一个实体类 Car：
+--
+在任何bean初始化回调之前将此BeanPostProcessor应用于给定的新bean实例（如InitializingBean的afterPropertiesSet（也相当于初始化方法）或自定义init方法）该bean
+将已经使用属性值进行填充。返回的bean实例可能是原始实例的封装。

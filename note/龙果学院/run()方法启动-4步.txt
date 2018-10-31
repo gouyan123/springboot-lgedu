@@ -1,0 +1,38 @@
+public ConfigurableApplicationContext run(String... args) {
+    //---前3步
+    StopWatch stopWatch = new StopWatch();
+    stopWatch.start();
+    ConfigurableApplicationContext context = null;
+    FailureAnalyzers analyzers = null;
+    this.configureHeadlessProperty();
+    SpringApplicationRunListeners listeners = this.getRunListeners(args);
+    listeners.starting();
+    //---
+    try {
+        //---第4步：创建一个DefaultApplicationArguments对象,它持有着args参数，就是main函数传进来的参数.调用prepareEnvironment()方法
+        ApplicationArguments applicationArguments = new DefaultApplicationArguments(args);
+        ConfigurableEnvironment environment = this.prepareEnvironment(listeners, applicationArguments);
+        //---第5步：
+        Banner printedBanner = this.printBanner(environment);
+        context = this.createApplicationContext();
+        new FailureAnalyzers(context);
+        this.prepareContext(context, environment, listeners, applicationArguments, printedBanner);
+        this.refreshContext(context);
+        this.afterRefresh(context, applicationArguments);
+        listeners.finished(context, (Throwable)null);
+        stopWatch.stop();
+        if (this.logStartupInfo) {
+            (new StartupInfoLogger(this.mainApplicationClass)).logStarted(this.getApplicationLog(), stopWatch);
+        }
+
+        return context;
+    } catch (Throwable var9) {
+        this.handleRunFailure(context, listeners, (FailureAnalyzers)analyzers, var9);
+        throw new IllegalStateException(var9);
+    }
+}
+---
+主要研究配置文件中 profiles：
+application.properties中配置：spring.profiles.active=test
+application-test.properties中配置：server.port=8081
+启动项目：

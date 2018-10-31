@@ -2,9 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3755dfef-3cce-4990-8adc-741d81bbb835" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/note/源码调试过程笔记.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/note/二月_春风/Springboot @Enable注解的工作原理.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/note/二月_春风/二月_春风springboot.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/note/龙果学院/run()方法启动-4步.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/EchoBeanPostProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/annotation/EnableLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/config/MyConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/importor/MyImportBeanDefinitionRegistrar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/importor/MyImportSelector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/Cat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/People.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/ServerBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/test/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/thread/UserRunnable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_8_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_8_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_5_23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_5_23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_annotations_api_8_5_23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_3_6_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_1_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_1_5_9_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_1_5_9_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_13_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_13_RELEASE.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/springboot源码解析-龙果学院.txt" beforeDir="false" afterPath="$PROJECT_DIR$/note/springboot源码解析-龙果学院.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/springboot源码解析-龙果学院.txt" beforeDir="false" afterPath="$PROJECT_DIR$/note/龙果学院/springboot源码解析-龙果学院.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/源码调试过程笔记.txt" beforeDir="false" afterPath="$PROJECT_DIR$/note/龙果学院/run()方法启动-1-3步.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-analysis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-analysis/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-analysis/spring-boot-analysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-analysis/spring-boot-analysis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/SpringBootAnalysisApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/SpringBootAnalysisApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-analysis/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-analysis/src/main/resources/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/spring-framework-4.3.13.RELEASE/spring-test/.gradle/" />
     <ignored path="$PROJECT_DIR$/spring-framework-4.3.13.RELEASE/spring-test/build/" />
@@ -205,61 +240,77 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="源码调试过程笔记.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/note/源码调试过程笔记.txt">
+      <file leaf-file-name="SpringBootAnalysisApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/SpringBootAnalysisApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="97" column="112" lean-forward="true" selection-start-line="97" selection-start-column="112" selection-end-line="97" selection-end-column="112" />
+            <state relative-caret-position="275">
+              <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BackgroundPreinitializer.class" pinned="false" current-in-tab="false">
-        <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot-autoconfigure/1.5.9.RELEASE/spring-boot-autoconfigure-1.5.9.RELEASE.jar!/org/springframework/boot/autoconfigure/BackgroundPreinitializer.class">
+      <file leaf-file-name="EnableAsync.java" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/scheduling/annotation/EnableAsync.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="157" column="22" selection-start-line="157" selection-start-column="22" selection-end-line="157" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Springboot @Enable注解的工作原理.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/note/二月_春风/Springboot @Enable注解的工作原理.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="598">
+              <caret line="297" column="33" selection-start-line="297" selection-start-column="33" selection-end-line="297" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImportBeanDefinitionRegistrar.java" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/context/annotation/ImportBeanDefinitionRegistrar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="671">
+              <caret line="63" column="1" lean-forward="true" selection-start-line="49" selection-end-line="63" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyImportSelector.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/importor/MyImportSelector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnableLog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/annotation/EnableLog.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="287">
-              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventPublishingRunListener.java" pinned="false" current-in-tab="false">
-        <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE-sources.jar!/org/springframework/boot/context/event/EventPublishingRunListener.java">
+      <file leaf-file-name="ImportSelector.java" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/context/annotation/ImportSelector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleApplicationEventMulticaster.class" pinned="false" current-in-tab="false">
-        <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE.jar!/org/springframework/context/event/SimpleApplicationEventMulticaster.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GenericApplicationListenerAdapter.class" pinned="false" current-in-tab="false">
-        <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE.jar!/org/springframework/context/event/GenericApplicationListenerAdapter.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="14" column="46" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpringApplicationRunListeners.java" pinned="false" current-in-tab="false">
-        <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE-sources.jar!/org/springframework/boot/SpringApplicationRunListeners.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+            <state relative-caret-position="220">
+              <caret line="47" selection-start-line="47" selection-end-line="55" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -268,6 +319,10 @@
       <find>ini</find>
       <find>supportsSourceType(</find>
       <find>multicastEvent(</find>
+      <find>customizePropertySources</find>
+      <find>configureEnvironment</find>
+      <find>SpringApplication</find>
+      <find>deduce</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -293,10 +348,33 @@
         <option value="$PROJECT_DIR$/spring-framework-4.3.13.RELEASE/spring-core/src/main/java/org/springframework/objenesis/SpringObjenesis.java" />
         <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/App.java" />
         <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/SpringBootAnalysisApplication.java" />
-        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/SpringBootAnalysisApplication.java" />
-        <option value="$PROJECT_DIR$/spring-boot-analysis/pom.xml" />
         <option value="$PROJECT_DIR$/note/springboot源码解析-龙果学院.txt" />
         <option value="$PROJECT_DIR$/note/源码调试过程笔记.txt" />
+        <option value="$PROJECT_DIR$/note/run()方法启动-4步.txt" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/resources/application-test.properties" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/resources/application-dev.yml" />
+        <option value="D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/org/springframework/boot/SpringApplication.java" />
+        <option value="$PROJECT_DIR$/source/spring-boot-1.5.9.RELEASE-sources/org/springframework/boot/SpringApplication.java" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/Car.java" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/test/Test.java" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/EchoBeanPostProcessor.java" />
+        <option value="$PROJECT_DIR$/note/二月_春风springboot.txt" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/ServerBean.java" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/thread/UserRunnable.java" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/User.kt" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/People.kt" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/Cat.kt" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/Dog.kt" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/Cat.java" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/config/MyConfig.java" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/annotation/EnableLog.java" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/importor/MyImportSelector.java" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/SpringBootAnalysisApplication.java" />
+        <option value="$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/importor/MyImportBeanDefinitionRegistrar.java" />
+        <option value="$PROJECT_DIR$/note/二月_春风/Springboot @Enable注解的工作原理.txt" />
       </list>
     </option>
   </component>
@@ -352,8 +430,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
     <option name="width" value="1040" />
     <option name="height" value="744" />
   </component>
@@ -365,6 +443,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -412,25 +492,64 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="springbootanalysis" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="springboot-lgedu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-lgedu" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-boot-analysis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="springbootanalysis" type="462c0819:PsiDirectoryNode" />
+              <item name="annotation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-lgedu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-lgedu" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-boot-analysis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="springbootanalysis" type="462c0819:PsiDirectoryNode" />
+              <item name="importor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-lgedu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot-lgedu" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-boot-analysis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springboot-lgedu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring-boot" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="project.structure.side.proportion" value="0.2990733" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ideaProject\springboot-lgedu\note\龙果学院" />
+      <recent name="D:\ideaProject\springboot-lgedu\note\二月_春风" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ideaProject\springboot-lgedu\spring-boot-analysis\src\main\resources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -448,10 +567,22 @@
     <configuration name="SpringBootAnalysisApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.gouyan.springbootanalysis.SpringBootAnalysisApplication" />
       <module name="spring-boot-analysis" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PROGRAM_PARAMETERS" value="--spring.profiles.active=dev" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.gouyan.springbootanalysis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.gouyan.springbootanalysis.test.Test" />
+      <module name="spring-boot-analysis" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gouyan.springbootanalysis.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -514,10 +645,12 @@
     <list>
       <item itemvalue="Spring Boot.SpringBootAnalysisApplication" />
       <item itemvalue="Application.SpringBootAnalysisApplication" />
+      <item itemvalue="Application.Test" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.SpringBootAnalysisApplication" />
+        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -542,19 +675,31 @@
       <workItem from="1535978703246" duration="1154000" />
       <workItem from="1536022858002" duration="4685000" />
       <workItem from="1539398676113" duration="7024000" />
-      <workItem from="1539418888845" duration="14660000" />
+      <workItem from="1539418888845" duration="15488000" />
+      <workItem from="1539565400770" duration="16146000" />
+      <workItem from="1540888899583" duration="5055000" />
+      <workItem from="1540953511683" duration="6763000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49674000" />
+    <option name="totallyTimeSpent" value="78466000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5005365" side_tool="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5005365" side_tool="true" weight="0.32941177" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.3299356" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
@@ -563,31 +708,31 @@
       <window_info id="Structure" order="1" sideWeight="0.5047059" side_tool="true" weight="0.35193133" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.42235294" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.3298122" />
+      <window_info anchor="bottom" id="Debug" order="15" weight="0.49882352" />
+      <window_info anchor="bottom" id="TODO" order="5" weight="0.32979977" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3298122" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
-      <window_info anchor="bottom" id="Java Enterprise" order="8" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.63411766" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.54" />
+      <window_info anchor="bottom" id="Spring" order="14" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.63411766" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49529412" weight="0.35193133" />
-      <window_info anchor="bottom" id="Problems" order="7" sideWeight="0.49946353" weight="0.3298122" />
-      <window_info anchor="right" id="Bean Validation" order="4" />
+      <window_info anchor="bottom" id="Problems" order="10" sideWeight="0.49946353" weight="0.3298122" />
       <window_info id="Web" order="3" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" id="JSF" order="4" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.3299356" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="right" id="Bean Validation" order="4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.5783274" />
       <window_info anchor="right" id="CDI" order="4" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49892703" weight="0.3298122" />
+      <window_info anchor="bottom" id="Build" order="11" sideWeight="0.49892703" weight="0.3298122" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
     </layout>
@@ -603,403 +748,392 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="10" />
+      <option name="time" value="42" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>SOURCE_TYPES</expression-string>
+        <expression-string>beanName</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>environment</expression-string>
+        <expression-string>bean</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>propertySources</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>this.environment.containsProperty(ACTIVE_PROFILES_PROPERTY)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>classLoader</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>name</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>className</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>sources</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>profiles.toArray(new String[profiles.size()])</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/SpringBootAnalysisApplication.java">
+    <entry file="jar://D:/mavenRepository/org/springframework/spring-web/4.3.13.RELEASE/spring-web-4.3.13.RELEASE.jar!/org/springframework/web/context/support/StandardServletEnvironment.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding>
-            <element signature="e#272#273#0" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="156">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE.jar!/org/springframework/boot/SpringApplication.class">
+    <entry file="jar://D:/mavenRepository/org/springframework/spring-web/4.3.13.RELEASE/spring-web-4.3.13.RELEASE.jar!/org/springframework/web/context/support/GenericWebApplicationContext.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7339">
-          <caret line="228" column="5" selection-start-line="225" selection-start-column="4" selection-end-line="228" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/note/springboot源码解析-龙果学院.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7503">
-          <caret line="183" column="1" selection-start-line="181" selection-start-column="4" selection-end-line="183" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/SpringBootAnalysisApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding>
-            <element signature="e#272#273#0" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE.jar!/org/springframework/boot/SpringApplication.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9348">
-          <caret line="228" column="5" lean-forward="true" selection-start-line="225" selection-start-column="4" selection-end-line="228" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/note/springboot源码解析-龙果学院.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2378">
-          <caret line="58" column="60" selection-start-line="58" selection-start-column="60" selection-end-line="58" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1066">
-          <caret line="26" column="18" lean-forward="true" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE.jar!/META-INF/spring.factories">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1845">
-          <caret line="45" column="67" lean-forward="true" selection-start-line="45" selection-start-column="67" selection-end-line="45" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/note/springboot源码解析-龙果学院.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/SpringBootAnalysisApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding>
-            <element signature="e#272#273#0" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/note/springboot源码解析-龙果学院.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="1" column="99" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-framework-4.3.13.RELEASE/spring-core/src/main/java/org/springframework/objenesis/SpringObjenesis.java" />
-    <entry file="file://$PROJECT_DIR$/note/springboot源码解析-龙果学院.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="2" column="117" selection-start-line="2" selection-start-column="117" selection-end-line="2" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/note/springboot源码解析-龙果学院.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="2" column="117" selection-start-line="2" selection-start-column="117" selection-end-line="2" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-framework-4.3.13.RELEASE/spring-beans/src/main/java/org/springframework/beans/factory/support/CglibSubclassingInstantiationStrategy.java" />
-    <entry file="file://$PROJECT_DIR$/spring-framework-4.3.13.RELEASE/spring-core/src/main/java/org/springframework/cglib/SpringCglibInfo.java" />
-    <entry file="file://$PROJECT_DIR$/spring-framework-4.3.13.RELEASE/spring-core/src/main/java/org/springframework/cglib/core/SpringNamingPolicy.java" />
-    <entry file="file://$PROJECT_DIR$/spring-framework-4.3.13.RELEASE/settings.gradle" />
-    <entry file="file://$PROJECT_DIR$/spring-framework-4.3.13.RELEASE/spring-core/src/main/java/org/springframework/objenesis/SpringObjenesis.java" />
-    <entry file="file://$PROJECT_DIR$/spring-boot-1.5.9.RELEASE/spring-boot/src/main/java/org/springframework/boot/SpringApplication.java" />
-    <entry file="file://$PROJECT_DIR$/spring-boot-1.5.9.RELEASE/spring-boot/src/test/java/org/springframework/boot/context/embedded/jetty/Jetty8JettyEmbeddedServletContainerFactoryTests.java" />
-    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/SpringBootAnalysisApplication.java" />
-    <entry file="uml://MAVEN/com.gouyan:spring-boot-analysis:0.0.1-SNAPSHOT">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>MAVEN</ID>
-          <OriginalElement>com.gouyan:spring-boot-analysis:0.0.1-SNAPSHOT</OriginalElement>
-          <nodes>
-            <node x="" y="">com.gouyan:spring-boot-analysis:0.0.1-SNAPSHOT</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot:jar:1.5.9.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot:jar:1.5.9.RELEASE/org.springframework:spring-context:jar:4.3.13.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-autoconfigure:jar:1.5.9.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.9.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.9.RELEASE/ch.qos.logback:logback-classic:jar:1.1.11</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.9.RELEASE/ch.qos.logback:logback-classic:jar:1.1.11/ch.qos.logback:logback-core:jar:1.1.11</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.9.RELEASE/org.slf4j:jcl-over-slf4j:jar:1.7.25</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.9.RELEASE/org.slf4j:jul-to-slf4j:jar:1.7.25</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.9.RELEASE/org.slf4j:log4j-over-slf4j:jar:1.7.25</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.springframework:spring-core:jar:4.3.13.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.yaml:snakeyaml:jar:1.17</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.9.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.9.RELEASE/org.apache.tomcat.embed:tomcat-embed-core:jar:8.5.23</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.9.RELEASE/org.apache.tomcat.embed:tomcat-embed-core:jar:8.5.23/org.apache.tomcat:tomcat-annotations-api:jar:8.5.23</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.9.RELEASE/org.apache.tomcat.embed:tomcat-embed-el:jar:8.5.23</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.9.RELEASE/org.apache.tomcat.embed:tomcat-embed-websocket:jar:8.5.23</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.hibernate:hibernate-validator:jar:5.3.6.Final</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.hibernate:hibernate-validator:jar:5.3.6.Final/javax.validation:validation-api:jar:1.1.0.Final</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.hibernate:hibernate-validator:jar:5.3.6.Final/org.jboss.logging:jboss-logging:jar:3.3.1.Final</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.hibernate:hibernate-validator:jar:5.3.6.Final/com.fasterxml:classmate:jar:1.3.4</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.8.10</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.8.10/com.fasterxml.jackson.core:jackson-annotations:jar:2.8.0</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.8.10/com.fasterxml.jackson.core:jackson-core:jar:2.8.10</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework:spring-web:jar:4.3.13.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework:spring-web:jar:4.3.13.RELEASE/org.springframework:spring-aop:jar:4.3.13.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework:spring-web:jar:4.3.13.RELEASE/org.springframework:spring-beans:jar:4.3.13.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework:spring-webmvc:jar:4.3.13.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework:spring-webmvc:jar:4.3.13.RELEASE/org.springframework:spring-expression:jar:4.3.13.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.9.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-test:jar:1.5.9.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-test-autoconfigure:jar:1.5.9.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.9.RELEASE/com.jayway.jsonpath:json-path:jar:2.2.0</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.9.RELEASE/com.jayway.jsonpath:json-path:jar:2.2.0/net.minidev:json-smart:jar:2.2.1</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.9.RELEASE/com.jayway.jsonpath:json-path:jar:2.2.0/net.minidev:json-smart:jar:2.2.1/net.minidev:accessors-smart:jar:1.1</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.9.RELEASE/com.jayway.jsonpath:json-path:jar:2.2.0/net.minidev:json-smart:jar:2.2.1/net.minidev:accessors-smart:jar:1.1/org.ow2.asm:asm:jar:5.0.3</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.9.RELEASE/com.jayway.jsonpath:json-path:jar:2.2.0/org.slf4j:slf4j-api:jar:1.7.25</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.9.RELEASE/junit:junit:jar:4.12</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.9.RELEASE/org.assertj:assertj-core:jar:2.6.0</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.9.RELEASE/org.mockito:mockito-core:jar:1.10.19</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.9.RELEASE/org.mockito:mockito-core:jar:1.10.19/org.objenesis:objenesis:jar:2.1</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.9.RELEASE/org.hamcrest:hamcrest-core:jar:1.3</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.9.RELEASE/org.hamcrest:hamcrest-library:jar:1.3</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.9.RELEASE/org.skyscreamer:jsonassert:jar:1.4.0</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.9.RELEASE/org.skyscreamer:jsonassert:jar:1.4.0/com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.9.RELEASE/org.springframework:spring-test:jar:4.3.13.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-devtools:jar:1.5.9.RELEASE</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.8405555555555556" x="2334.0" y="241.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>All</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE.jar!/META-INF/spring.factories">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="45" column="67" selection-start-line="45" selection-start-column="67" selection-end-line="45" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/spring-core/4.3.13.RELEASE/spring-core-4.3.13.RELEASE.jar!/org/springframework/core/io/support/SpringFactoriesLoader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1558">
+        <state relative-caret-position="188">
           <caret line="57" selection-start-line="57" selection-end-line="57" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/spring-core/4.3.13.RELEASE/spring-core-4.3.13.RELEASE.jar!/org/springframework/util/ClassUtils.class">
+    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE.jar!/org/springframework/context/support/AbstractApplicationContext.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5699">
-          <caret line="158" selection-start-line="158" selection-end-line="158" />
+        <state relative-caret-position="188">
+          <caret line="141" selection-start-line="141" selection-end-line="141" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE.jar!/org/springframework/boot/SpringApplication.class">
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/resources/application.properties" />
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/resources/application-test.properties" />
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/resources/application-dev.yml" />
+    <entry file="jar://F:/ProgramFiles/Java/jdk1.8.0_181/jre/lib/ext/access-bridge-64.jar!/com/sun/java/accessibility/AccessBridge.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="88" column="20" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
+        <state relative-caret-position="355">
+          <caret line="101" column="17" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.13.RELEASE/spring-core-4.3.13.RELEASE.jar!/org/springframework/util/StopWatch.class">
+    <entry file="jar://D:/mavenRepository/org/yaml/snakeyaml/1.17/snakeyaml-1.17-sources.jar!/org/yaml/snakeyaml/nodes/AnchorNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1763">
-          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+        <state relative-caret-position="410">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/spring-core/4.3.13.RELEASE/spring-core-4.3.13.RELEASE.jar!/org/springframework/util/StopWatch.class">
+    <entry file="jar://D:/mavenRepository/org/yaml/snakeyaml/1.17/snakeyaml-1.17-sources.jar!/org/yaml/snakeyaml/nodes/SequenceNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="739">
-          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+        <state relative-caret-position="232">
+          <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/spring-core/4.3.13.RELEASE/spring-core-4.3.13.RELEASE-sources.jar!/org/springframework/util/StopWatch.java">
+    <entry file="file://D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/org/springframework/boot/SpringApplication.java" />
+    <entry file="file://$PROJECT_DIR$/source/spring-boot-1.5.9.RELEASE-sources/org/springframework/boot/SpringApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="861">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#8756#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="302">
+          <caret line="255" column="33" selection-start-line="255" selection-end-line="256" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-1.5.9.RELEASE/pom.xml" />
-    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE.jar!/org/springframework/boot/SpringApplicationRunListeners.class">
+    <entry file="jar://F:/ProgramFiles/Java/jdk1.8.0_181/src.zip!/java/util/Map.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://F:/ProgramFiles/Java/jdk1.8.0_181/src.zip!/java/lang/reflect/Constructor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="405" column="13" selection-start-line="405" selection-start-column="13" selection-end-line="405" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/spring-beans/4.3.13.RELEASE/spring-beans-4.3.13.RELEASE.jar!/org/springframework/beans/BeanUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="75" column="30" lean-forward="true" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/spring-core/4.3.13.RELEASE/spring-core-4.3.13.RELEASE-sources.jar!/org/springframework/core/io/support/SpringFactoriesLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="58" column="12" selection-start-line="26" selection-start-column="4" selection-end-line="58" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/SpringBootAnalysisApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-          <folding>
-            <element signature="e#272#273#0" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE.jar!/org/springframework/boot/SpringApplication.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="227" column="29" lean-forward="true" selection-start-line="227" selection-start-column="29" selection-end-line="227" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE-sources.jar!/org/springframework/boot/SpringApplicationRunListeners.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/spring-core/4.3.13.RELEASE/spring-core-4.3.13.RELEASE-sources.jar!/org/springframework/core/ResolvableType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="177" selection-start-line="177" selection-end-line="177" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE-sources.jar!/org/springframework/boot/context/event/EventPublishingRunListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
+        <state relative-caret-position="188">
+          <caret line="211" column="6" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="jar://D:/mavenRepository/org/springframework/spring-core/4.3.13.RELEASE/spring-core-4.3.13.RELEASE-sources.jar!/org/springframework/util/ClassUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="392" column="5" lean-forward="true" selection-start-line="369" selection-start-column="4" selection-end-line="392" selection-end-column="5" />
+        <state relative-caret-position="305">
+          <caret line="327" selection-start-line="327" selection-end-line="327" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/note/springboot源码解析-龙果学院.txt">
+    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE-sources.jar!/org/springframework/boot/SpringApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="433" column="33" selection-start-line="433" selection-start-column="33" selection-end-line="433" selection-end-column="33" />
+        <state relative-caret-position="425">
+          <caret line="249" column="54" selection-start-line="249" selection-start-column="54" selection-end-line="249" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE-sources.jar!/org/springframework/boot/logging/LoggingApplicationListener.java">
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/test/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="191" selection-start-line="191" selection-end-line="191" />
+        <state relative-caret-position="205">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/spring-beans/4.3.13.RELEASE/spring-beans-4.3.13.RELEASE-sources.jar!/org/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13202">
+          <caret line="408" selection-start-line="408" selection-end-line="408" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/EchoBeanPostProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/Car.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
-            <element signature="e#7402#7403#0" expanded="true" />
+            <element signature="e#557#558#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot-autoconfigure/1.5.9.RELEASE/spring-boot-autoconfigure-1.5.9.RELEASE.jar!/org/springframework/boot/autoconfigure/BackgroundPreinitializer.class">
+    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE-sources.jar!/org/springframework/boot/SpringBootConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot-autoconfigure/1.5.9.RELEASE/spring-boot-autoconfigure-1.5.9.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/SpringBootApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="79" column="29" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/note/二月_春风/二月_春风springboot.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/context/annotation/Condition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1025">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/spring-boot-1.5.9.RELEASE-sources/org/springframework/boot/admin/package-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#726#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/spring-boot-1.5.9.RELEASE-sources/org/springframework/boot/orm/jpa/hibernate/package-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#712#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/ServerBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="5" selection-start-line="5" selection-end-line="13" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE-sources.jar!/org/springframework/boot/context/config/ConfigFileApplicationListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2214">
+          <caret line="396" selection-start-line="396" selection-end-line="396" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/thread/UserRunnable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE-sources.jar!/org/springframework/boot/context/event/ApplicationStartedEvent.java">
+    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/scheduling/annotation/AsyncConfigurationSelector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="42" column="34" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="34" />
+        <state relative-caret-position="261">
+          <caret line="30" column="64" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/context/annotation/AdviceModeImportSelector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="671">
+          <caret line="89" column="1" lean-forward="true" selection-start-line="33" selection-end-line="89" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot-autoconfigure/1.5.9.RELEASE/spring-boot-autoconfigure-1.5.9.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/EnableAutoConfigurationImportSelector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="34" selection-start-line="34" selection-end-line="48" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/boot/spring-boot-autoconfigure/1.5.9.RELEASE/spring-boot-autoconfigure-1.5.9.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/EnableAutoConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="80" column="3" lean-forward="true" selection-start-line="80" selection-start-column="3" selection-end-line="80" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/context/annotation/Import.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="61" column="1" selection-start-line="50" selection-end-line="61" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/scheduling/annotation/EnableAsync.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="157" column="22" selection-start-line="157" selection-start-column="22" selection-end-line="157" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/User.kt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/People.kt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/Cat.kt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/Dog.kt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/People.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/Dog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/Cat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/config/MyConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
           <folding>
-            <element signature="e#1800#1801#0" expanded="true" />
-            <element signature="e#1831#1832#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
+            <element signature="e#397#398#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE.jar!/org/springframework/context/event/GenericApplicationListenerAdapter.class">
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="14" column="46" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="46" />
+        <state relative-caret-position="171">
+          <caret line="32" column="12" selection-start-line="32" selection-start-column="8" selection-end-line="35" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE.jar!/org/springframework/context/event/AbstractApplicationEventMulticaster.class">
+    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/context/annotation/ImportSelector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="204" selection-start-line="204" selection-end-line="204" />
+        <state relative-caret-position="220">
+          <caret line="47" selection-start-line="47" selection-end-line="55" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE.jar!/org/springframework/context/event/SimpleApplicationEventMulticaster.class">
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/annotation/EnableLog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="287">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/note/源码调试过程笔记.txt">
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/importor/MyImportSelector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="97" column="112" lean-forward="true" selection-start-line="97" selection-start-column="112" selection-end-line="97" selection-end-column="112" />
+        <state relative-caret-position="164">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/SpringBootAnalysisApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/mavenRepository/org/springframework/spring-context/4.3.13.RELEASE/spring-context-4.3.13.RELEASE-sources.jar!/org/springframework/context/annotation/ImportBeanDefinitionRegistrar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="671">
+          <caret line="63" column="1" lean-forward="true" selection-start-line="49" selection-end-line="63" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-analysis/src/main/java/com/gouyan/springbootanalysis/importor/MyImportBeanDefinitionRegistrar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="19" column="81" selection-start-line="19" selection-start-column="81" selection-end-line="19" selection-end-column="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/note/二月_春风/Springboot @Enable注解的工作原理.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="297" column="33" selection-start-line="297" selection-start-column="33" selection-end-line="297" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1060,7 +1194,8 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.2990733" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1080,11 +1215,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Gradle: antlr:antlr:2.7.6</last-edited>
+          <last-edited>Maven: org.springframework.boot:spring-boot:1.5.9.RELEASE</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.2990733" />
               </list>
             </option>
           </splitter-proportions>
